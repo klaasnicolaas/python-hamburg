@@ -12,12 +12,9 @@ import async_timeout
 from aiohttp import hdrs
 from yarl import URL
 
-from .exceptions import (
-    UDPConnectionError,
-    UDPResultsError,
-    UDPError,
-)
+from .exceptions import UDPConnectionError, UDPError, UDPResultsError
 from .models import DisabledParking
+
 
 @dataclass
 class UDP:
@@ -73,16 +70,32 @@ class UDP:
             text = await response.text()
             raise UDPError(
                 "Unexpected content type response from the Urban Data Platform API",
-                {f"Content-Type": content_type, "Response": text},
+                {"Content-Type": content_type, "Response": text},
             )
 
         return await response.json()
 
-    async def disabled_parkings(self, limit: int = 10, bulk: str = "false") -> list[DisabledParking]:
+    async def disabled_parkings(
+        self, limit: int = 10, bulk: str = "false"
+    ) -> list[DisabledParking]:
+        """Get all disabled parking spaces.
+
+        Args:
+            limit: Number of items to return.
+            bulk: Whether to return all items or the limit.
+
+        Returns:
+            A list of DisabledParking objects.
+
+        Raises:
+            UDPError: If the data is not valid.
+            UDPResultsError: When no results are found.
+        """
+
         results: list[DisabledParking] = []
         locations = await self._request(
             "behindertenstellplaetze/collections/verkehr_behindertenparkpl/items",
-            params={"limit": limit,"bulk": bulk},
+            params={"limit": limit, "bulk": bulk},
         )
 
         for item in locations["features"]:
@@ -94,7 +107,6 @@ class UDP:
             raise UDPResultsError("No results found.")
         return results
 
-
     async def close(self) -> None:
         """Close open client session."""
         if self.session and self._close_session:
@@ -102,6 +114,7 @@ class UDP:
 
     async def __aenter__(self) -> UDP:
         """Async enter.
+
         Returns:
             The Urban Data Platform object.
         """
@@ -109,6 +122,7 @@ class UDP:
 
     async def __aexit__(self, *_exc_info: str) -> None:
         """Async exit.
+
         Args:
             _exc_info: Exec type.
         """

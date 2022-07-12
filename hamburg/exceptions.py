@@ -1,13 +1,13 @@
-"""Exceptions for Parking Hamburg."""
+"""Asynchronous Python client providing Urban Data information of Hamburg."""
 
 
 class UDPError(Exception):
-    """Generic Parking Hamburg exception."""
+    """Generic Urban Data Platform Hamburg exception."""
 
 
 class UDPConnectionError(UDPError):
-    """Parking Hamburg - connection error."""
+    """Urban Data Platform Hamburg - connection error."""
 
 
 class UDPResultsError(UDPError):
-    """Parking Hamburg - results error."""
+    """Urban Data Platform Hamburg - results error."""

@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+
 @dataclass
 class DisabledParking:
     """Object representing a disabled parking."""
@@ -24,10 +25,16 @@ class DisabledParking:
         Returns:
             A DisabledParking object.
         """
-        
-        @staticmethod
+
         def strip_spaces(string: str) -> str | None:
-            """Strip spaces from a string."""
+            """Strip spaces from a string.
+
+            Args:
+                string: The string to strip.
+
+            Returns:
+                The string without spaces or None if the string is empty.
+            """
             if string is None:
                 return None
             return string.strip()
@@ -35,7 +42,7 @@ class DisabledParking:
         attr = data["properties"]
         geo = data["geometry"]["coordinates"]
         return cls(
-            spot_id=data.get("id"),
+            spot_id=str(data.get("id")),
             street=strip_spaces(attr.get("nahe_adresse")),
             number=attr.get("anzahl"),
             longitude=geo[0],
