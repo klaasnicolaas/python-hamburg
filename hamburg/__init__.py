@@ -1,11 +1,12 @@
 """Asynchronous Python client providing Urban Data information of Hamburg."""
 
-from .exceptions import UDPConnectionError, UDPError, UDPResultsError
-from .hamburg import UDP
+from .exceptions import UDPHamburgConnectionError, UDPHamburgError
+from .hamburg import UDPHamburg
+from .models import DisabledParking
 
 __all__ = [
-    "UDP",
-    "UDPConnectionError",
-    "UDPResultsError",
-    "UDPError",
+    "UDPHamburg",
+    "UDPHamburgConnectionError",
+    "UDPHamburgError",
+    "DisabledParking",
 ]

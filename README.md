@@ -44,12 +44,12 @@ There are a number of variables you can set to retrieve the data:
 ```python
 import asyncio
 
-from hamburg import UDP
+from hamburg import UDPHamburg
 
 
 async def main() -> None:
     """Show example on using the Parking Hamburg API client."""
-    async with UDP() as client:
+    async with UDPHamburg() as client:
         locations = await client.disabled_parkings()
         print(locations)
 

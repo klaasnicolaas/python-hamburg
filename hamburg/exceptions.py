@@ -1,13 +1,9 @@
 """Asynchronous Python client providing Urban Data information of Hamburg."""
 
 
-class UDPError(Exception):
+class UDPHamburgError(Exception):
     """Generic Urban Data Platform Hamburg exception."""
 
 
-class UDPConnectionError(UDPError):
+class UDPHamburgConnectionError(UDPHamburgError):
     """Urban Data Platform Hamburg - connection error."""
-
-
-class UDPResultsError(UDPError):
-    """Urban Data Platform Hamburg - results error."""
