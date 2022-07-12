@@ -172,8 +172,8 @@ SOFTWARE.
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/5041849456b7348f3bc7/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-hamburg/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[pypi]: https://pypi.org/project/parking-hamburg/
-[python-versions-shield]: https://img.shields.io/pypi/pyversions/parking-hamburg
+[pypi]: https://pypi.org/project/hamburg/
+[python-versions-shield]: https://img.shields.io/pypi/pyversions/hamburg
 [typing-shield]: https://github.com/klaasnicolaas/python-hamburg/actions/workflows/typing.yaml/badge.svg
 [typing-url]: https://github.com/klaasnicolaas/python-hamburg/actions/workflows/typing.yaml
 [releases-shield]: https://img.shields.io/github/release/klaasnicolaas/python-hamburg.svg
