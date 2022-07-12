@@ -160,7 +160,7 @@ SOFTWARE.
 [code-quality]: https://lgtm.com/projects/g/klaasnicolaas/python-hamburg/context:python
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/python-hamburg.svg
 [commits-url]: https://github.com/klaasnicolaas/python-hamburg/commits/main
-[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-hamburg/branch/main/graph/badge.svg?token=4AMI23ZT7C
+[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-hamburg/branch/main/graph/badge.svg?token=4Y4YAYHR2D
 [codecov-url]: https://codecov.io/gh/klaasnicolaas/python-hamburg
 [forks-shield]: https://img.shields.io/github/forks/klaasnicolaas/python-hamburg.svg
 [forks-url]: https://github.com/klaasnicolaas/python-hamburg/network/members
@@ -169,7 +169,7 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-hamburg.svg
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-hamburg.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
-[maintainability-shield]: https://api.codeclimate.com/v1/badges/5756f943554d4c6ffa9f/maintainability
+[maintainability-shield]: https://api.codeclimate.com/v1/badges/5041849456b7348f3bc7/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-hamburg/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/parking-hamburg/
