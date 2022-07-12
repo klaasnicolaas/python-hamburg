@@ -29,5 +29,6 @@ async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
             assert isinstance(item, DisabledParking)
             assert item.spot_id is not None
             assert item.street is None or isinstance(item.street, str)
+            assert item.limitation is None or isinstance(item.limitation, str)
             assert item.longitude is not None
             assert item.latitude is not None
