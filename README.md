@@ -29,7 +29,7 @@ A python package with which you can retrieve data from the Urban Data Platform o
 ## Installation
 
 ```bash
-pip install parking-hamburg
+pip install hamburg
 ```
 
 ## Usage
