@@ -11,6 +11,7 @@ class DisabledParking:
 
     spot_id: str
     street: str | None
+    limitation: str | None
     number: int
     longitude: float
     latitude: float
@@ -44,6 +45,7 @@ class DisabledParking:
         return cls(
             spot_id=str(data.get("id")),
             street=strip_spaces(attr.get("nahe_adresse")),
+            limitation=strip_spaces(attr.get("befristung")),
             number=attr.get("anzahl"),
             longitude=geo[0],
             latitude=geo[1],
