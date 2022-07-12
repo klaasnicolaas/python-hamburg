@@ -12,12 +12,12 @@ import async_timeout
 from aiohttp import hdrs
 from yarl import URL
 
-from .exceptions import UDPConnectionError, UDPError, UDPResultsError
+from .exceptions import UDPHamburgConnectionError, UDPHamburgError
 from .models import DisabledParking
 
 
 @dataclass
-class UDP:
+class UDPHamburg:
     """Main class for handling data fetchting from Urban Data Platform of Hamburg."""
 
     request_timeout: float = 10.0
@@ -57,18 +57,18 @@ class UDP:
                 )
                 response.raise_for_status()
         except asyncio.TimeoutError as exception:
-            raise UDPConnectionError(
+            raise UDPHamburgConnectionError(
                 "Timeout occurred while connecting to the Urban Data Platform API."
             ) from exception
         except (aiohttp.ClientError, socket.gaierror) as exception:
-            raise UDPConnectionError(
+            raise UDPHamburgConnectionError(
                 "Error occurred while communicating with Urban Data Platform API."
             ) from exception
 
         content_type = response.headers.get("Content-Type", "")
         if "application/geo+json" not in content_type:
             text = await response.text()
-            raise UDPError(
+            raise UDPHamburgError(
                 "Unexpected content type response from the Urban Data Platform API",
                 {"Content-Type": content_type, "Response": text},
             )
@@ -86,10 +86,6 @@ class UDP:
 
         Returns:
             A list of DisabledParking objects.
-
-        Raises:
-            UDPError: If the data is not valid.
-            UDPResultsError: When no results are found.
         """
 
         results: list[DisabledParking] = []
@@ -99,12 +95,7 @@ class UDP:
         )
 
         for item in locations["features"]:
-            try:
-                results.append(DisabledParking.from_json(item))
-            except KeyError as exception:
-                raise UDPError(f"Got wrong data: {item}") from exception
-        if not results:
-            raise UDPResultsError("No results found.")
+            results.append(DisabledParking.from_json(item))
         return results
 
     async def close(self) -> None:
@@ -112,7 +103,7 @@ class UDP:
         if self.session and self._close_session:
             await self.session.close()
 
-    async def __aenter__(self) -> UDP:
+    async def __aenter__(self) -> UDPHamburg:
         """Async enter.
 
         Returns:

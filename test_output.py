@@ -3,12 +3,12 @@
 
 import asyncio
 
-from hamburg import UDP
+from hamburg import UDPHamburg
 
 
 async def main() -> None:
     """Show example on using the Hamburg API client."""
-    async with UDP() as client:
+    async with UDPHamburg() as client:
         locations = await client.disabled_parkings(bulk="true")
         count: int
 
