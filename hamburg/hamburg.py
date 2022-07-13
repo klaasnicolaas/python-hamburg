@@ -115,7 +115,6 @@ class UDPHamburg:
             "p_und_r/collections/p_und_r/items",
             params={"limit": limit, "bulk": bulk},
         )
-        print(locations)
         for item in locations["features"]:
             results.append(ParkAndRide.from_json(item))
         return results
