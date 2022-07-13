@@ -13,7 +13,7 @@ from aiohttp import hdrs
 from yarl import URL
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
-from .models import DisabledParking
+from .models import DisabledParking, ParkAndRide
 
 
 @dataclass
@@ -96,6 +96,28 @@ class UDPHamburg:
 
         for item in locations["features"]:
             results.append(DisabledParking.from_json(item))
+        return results
+
+    async def park_and_ride(
+        self, limit: int = 10, bulk: str = "false"
+    ) -> list[ParkAndRide]:
+        """Get all park and ride spaces.
+
+        Args:
+            limit: Number of items to return.
+            bulk: Whether to return all items or the limit.
+
+        Returns:
+            A list of ParkAndRide objects.
+        """
+        results: list[ParkAndRide] = []
+        locations = await self._request(
+            "p_und_r/collections/p_und_r/items",
+            params={"limit": limit, "bulk": bulk},
+        )
+        print(locations)
+        for item in locations["features"]:
+            results.append(ParkAndRide.from_json(item))
         return results
 
     async def close(self) -> None:

@@ -23,7 +23,7 @@ async def test_json_request(aresponses: ResponsesMockServer) -> None:
         aresponses.Response(
             status=200,
             headers={"Content-Type": "application/geo+json"},
-            text=load_fixtures("parking_hamburg.geojson"),
+            text=load_fixtures("disabled_parking.geojson"),
         ),
     )
     async with aiohttp.ClientSession() as session:
@@ -43,7 +43,7 @@ async def test_internal_session(aresponses: ResponsesMockServer) -> None:
         aresponses.Response(
             status=200,
             headers={"Content-Type": "application/geo+json"},
-            text=load_fixtures("parking_hamburg.geojson"),
+            text=load_fixtures("disabled_parking.geojson"),
         ),
     )
     async with UDPHamburg() as client:
@@ -57,7 +57,7 @@ async def test_timeout(aresponses: ResponsesMockServer) -> None:
     async def response_handler(_: aiohttp.ClientResponse) -> Response:
         await asyncio.sleep(0.2)
         return aresponses.Response(
-            body="Goodmorning!", text=load_fixtures("parking_hamburg.geojson")
+            body="Goodmorning!", text=load_fixtures("disabled_parking.geojson")
         )
 
     aresponses.add("api.hamburg.de", "/datasets/v1/test", "GET", response_handler)
