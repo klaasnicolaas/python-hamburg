@@ -32,6 +32,13 @@ A python package with which you can retrieve data from the Urban Data Platform o
 pip install hamburg
 ```
 
+## Data
+
+You can read the following data with this package:
+
+- Disabled parking spaces (Behindertenstellplätze)
+- Park and ride occupancy (Park + Ride Anlagen)
+
 ## Usage
 
 There are a number of variables you can set to retrieve the data:
@@ -50,19 +57,15 @@ from hamburg import UDPHamburg
 async def main() -> None:
     """Show example on using the Parking Hamburg API client."""
     async with UDPHamburg() as client:
-        locations = await client.disabled_parkings()
-        print(locations)
+        disabled_parkings = await client.disabled_parkings()
+        park_and_ride = await client.park_and_ride()
+        print(disabled_parkings)
+        print(park_and_ride)
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
-
-## Data
-
-You can read the following data with this package:
-
-- Disabled parking spaces (Behindertenstellplätze)
 
 ## Use cases
 
