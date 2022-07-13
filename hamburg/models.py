@@ -68,6 +68,7 @@ class ParkAndRide:
     occupancy_percentage: float
     disabled_parking_spaces: int
     tickets: dict[str, int]
+    url: str
     longitude: float
     latitude: float
     updated_at: datetime
@@ -101,6 +102,7 @@ class ParkAndRide:
                 "month": attr.get("ticket_30_tage"),
                 "year": attr.get("ticket_1_jahr"),
             },
+            url=attr.get("homepage"),
             longitude=geo[0],
             latitude=geo[1],
             updated_at=datetime.strptime(
