@@ -54,6 +54,7 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
         for item in spaces:
             assert item.spot_id is not None
             assert item.address is not None
+            assert item.availability_pct is not None
             assert isinstance(item.tickets, dict)
             assert isinstance(item.longitude, float)
             assert isinstance(item.latitude, float)
