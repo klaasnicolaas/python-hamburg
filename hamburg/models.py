@@ -65,7 +65,7 @@ class ParkAndRide:
     park_type: str
     free_space: int
     capacity: int
-    availabilty_pct: float
+    availability_pct: float
     disabled_parking_spaces: int
     tickets: dict[str, int]
     url: str
@@ -95,7 +95,7 @@ class ParkAndRide:
             park_type=attr.get("art"),
             free_space=attr.get("stellplaetze_frei"),
             capacity=attr.get("stellplaetze_gesamt"),
-            availabilty_pct=round(attr.get("stellpl_frei_in_prozent"), 2),
+            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 2),
             disabled_parking_spaces=attr.get("stellplaetze_behinderte_gesamt"),
             tickets={
                 "day": attr.get("ticket_1_tag"),
