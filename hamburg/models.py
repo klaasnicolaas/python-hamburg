@@ -18,11 +18,11 @@ class DisabledParking:
     latitude: float
 
     @classmethod
-    def from_json(cls, data: dict[str, Any]) -> DisabledParking:
-        """Return a DisabledParking object from a JSON dictionary.
+    def from_dict(cls, data: dict[str, Any]) -> DisabledParking:
+        """Return a DisabledParking object from a dictionary.
 
         Args:
-            data: The JSON data from the API.
+            data: The data from the API.
 
         Returns:
             A DisabledParking object.
@@ -59,26 +59,28 @@ class ParkAndRide:
 
     spot_id: str
     name: str
-    construction_year: int
-    address: str
-    public_transport_line: str
     park_type: str
-    free_space: int
-    capacity: int
-    availability_pct: float
+    address: str
+    construction_year: int
+    public_transport_line: str
     disabled_parking_spaces: int
     tickets: dict[str, int]
     url: str
+
+    free_space: int
+    capacity: int
+    availability_pct: float
+
     longitude: float
     latitude: float
     updated_at: datetime
 
     @classmethod
-    def from_json(cls, data: dict[str, Any]) -> ParkAndRide:
-        """Return a ParkAndRide object from a JSON dictionary.
+    def from_dict(cls, data: dict[str, Any]) -> ParkAndRide:
+        """Return a ParkAndRide object from a dictionary.
 
         Args:
-            data: The JSON data from the API.
+            data: The data from the API.
 
         Returns:
             A ParkAndRide object.
@@ -89,13 +91,10 @@ class ParkAndRide:
         return cls(
             spot_id=str(data.get("id")),
             name=attr.get("name"),
-            construction_year=attr.get("baujahr"),
-            address=attr.get("adresse"),
-            public_transport_line=attr.get("linie"),
             park_type=attr.get("art"),
-            free_space=attr.get("stellplaetze_frei"),
-            capacity=attr.get("stellplaetze_gesamt"),
-            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 2),
+            address=attr.get("adresse"),
+            construction_year=attr.get("baujahr"),
+            public_transport_line=attr.get("linie"),
             disabled_parking_spaces=attr.get("stellplaetze_behinderte_gesamt"),
             tickets={
                 "day": attr.get("ticket_1_tag"),
@@ -103,6 +102,9 @@ class ParkAndRide:
                 "year": attr.get("ticket_1_jahr"),
             },
             url=attr.get("homepage"),
+            free_space=attr.get("stellplaetze_frei"),
+            capacity=attr.get("stellplaetze_gesamt"),
+            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 1),
             longitude=geo[0],
             latitude=geo[1],
             updated_at=datetime.strptime(

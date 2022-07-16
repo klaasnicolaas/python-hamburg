@@ -49,7 +49,7 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
     )
     async with aiohttp.ClientSession() as session:
         client = UDPHamburg(session=session)
-        spaces: list[ParkAndRide] = await client.park_and_ride()
+        spaces: list[ParkAndRide] = await client.park_and_rides()
         assert spaces is not None
         for item in spaces:
             assert item.spot_id is not None
