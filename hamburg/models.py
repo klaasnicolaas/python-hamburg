@@ -18,11 +18,11 @@ class DisabledParking:
     latitude: float
 
     @classmethod
-    def from_json(cls, data: dict[str, Any]) -> DisabledParking:
-        """Return a DisabledParking object from a JSON dictionary.
+    def from_dict(cls, data: dict[str, Any]) -> DisabledParking:
+        """Return a DisabledParking object from a dictionary.
 
         Args:
-            data: The JSON data from the API.
+            data: The data from the API.
 
         Returns:
             A DisabledParking object.
@@ -59,26 +59,28 @@ class ParkAndRide:
 
     spot_id: str
     name: str
-    construction_year: int
-    address: str
-    public_transport_line: str
     park_type: str
-    free_space: int
-    capacity: int
-    availability_pct: float
+    address: str
+    construction_year: int
+    public_transport_line: str
     disabled_parking_spaces: int
     tickets: dict[str, int]
     url: str
+
+    free_space: int
+    capacity: int
+    availability_pct: float
+
     longitude: float
     latitude: float
     updated_at: datetime
 
     @classmethod
-    def from_json(cls, data: dict[str, Any]) -> ParkAndRide:
-        """Return a ParkAndRide object from a JSON dictionary.
+    def from_dict(cls, data: dict[str, Any]) -> ParkAndRide:
+        """Return a ParkAndRide object from a dictionary.
 
         Args:
-            data: The JSON data from the API.
+            data: The data from the API.
 
         Returns:
             A ParkAndRide object.
@@ -95,7 +97,7 @@ class ParkAndRide:
             park_type=attr.get("art"),
             free_space=attr.get("stellplaetze_frei"),
             capacity=attr.get("stellplaetze_gesamt"),
-            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 2),
+            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 1),
             disabled_parking_spaces=attr.get("stellplaetze_behinderte_gesamt"),
             tickets={
                 "day": attr.get("ticket_1_tag"),

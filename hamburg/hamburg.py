@@ -95,10 +95,10 @@ class UDPHamburg:
         )
 
         for item in locations["features"]:
-            results.append(DisabledParking.from_json(item))
+            results.append(DisabledParking.from_dict(item))
         return results
 
-    async def park_and_ride(
+    async def park_and_rides(
         self, limit: int = 10, bulk: str = "false"
     ) -> list[ParkAndRide]:
         """Get all park and ride spaces.
@@ -116,7 +116,7 @@ class UDPHamburg:
             params={"limit": limit, "bulk": bulk},
         )
         for item in locations["features"]:
-            results.append(ParkAndRide.from_json(item))
+            results.append(ParkAndRide.from_dict(item))
         return results
 
     async def close(self) -> None:
