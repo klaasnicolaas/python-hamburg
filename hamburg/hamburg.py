@@ -46,6 +46,7 @@ class UDPHamburg:
         Raises:
             UDPHamburgConnectionError: Timeout occurred while
                 connecting to the Urban Data Platform API.
+            UDPHamburgError: If the data is not valid.
         """
         version = metadata.version(__package__)
         url = URL.build(
