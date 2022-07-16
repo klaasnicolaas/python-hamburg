@@ -32,6 +32,21 @@ class UDPHamburg:
         method: str = hdrs.METH_GET,
         params: dict[str, Any] | None = None,
     ) -> Any:
+        """Handle a request to the Urban Data Platform API of Hamburg.
+
+        Args:
+            uri: Request URI, without '/', for example, 'status'
+            method: HTTP method to use, for example, 'GET'
+            params: Extra options to improve or limit the response.
+
+        Returns:
+            A Python dictionary (text) with the response from
+            the Urban Data Platform API.
+
+        Raises:
+            UDPHamburgConnectionError: Timeout occurred while
+                connecting to the Urban Data Platform API.
+        """
         version = metadata.version(__package__)
         url = URL.build(
             scheme="https", host="api.hamburg.de", path="/datasets/v1/"

@@ -32,21 +32,55 @@ A python package with which you can retrieve data from the Urban Data Platform o
 pip install hamburg
 ```
 
-## Data
+## Datasets
 
-You can read the following data with this package:
+You can read the following datasets with this package:
 
 - Disabled parking spaces (Behindertenstellplätze)
-- Park and ride occupancy (Park + Ride Anlagen)
+- Park and rides occupancy (Park + Ride Anlagen)
 
-## Usage
-
-There are a number of variables you can set to retrieve the data:
+There are a number of parameters you can set to retrieve the data:
 
 - **limit** (default: 10) - How many results you want to retrieve.
-- **bulk** (default: false) - If string is true, rows will be ignored and the entire result will be returned.
+- **bulk** (default: false) - If string is true, number of rows will be ignored and the entire result will be returned.
 
-### Example
+<details>
+    <summary>Click here to get more details</summary>
+
+### Disabled parking spaces
+
+| Variable | Type | Description |
+| :------- | :--- | :---------- |
+| `spot_id` | string | The ID of the parking spot |
+| `street` | string | The street name |
+| `limitation` | string | Some locations have window times where the location is only specific for disabled parking, outside these times everyone is allowed to park there |
+| `number` | string | The number of parking spots on this location |
+| `longitude` | float | The longitude of the parking spot |
+| `latitude` | float | The latitude of the parking spot |
+
+### Park and Rides
+
+| Variable | Type | Description |
+| :------- | :--- | :---------- |
+| `spot_id` | string | The ID of the park and ride |
+| `name` | string | The name of the park and ride |
+| `park_type` | string | The type of the park and ride |
+| `address` | string | The address of the park and ride |
+| `construction_year` | string | The year the park and ride was constructed |
+| `public_transport_line` | string | The public transport line the park and ride is connected to |
+| `disabled_parking_spaces` | int | The number of disabled parking spaces on the park and ride |
+| `tickets` | dict | The type of tickets available for the park and ride |
+| `url` | string | The URL of the park and ride where you can find more information |
+| `free_space` | int | The number of free spaces on the park and ride |
+| `capacity` | int | The capacity of the park and ride |
+| `availability_pct` | float | The percentage of the park and ride that is available |
+| `longitude` | float | The longitude of the park and ride |
+| `latitude` | float | The latitude of the park and ride |
+| `updated_at` | datetime | The date and time the park and ride was last updated |
+
+</details>
+
+## Example
 
 ```python
 import asyncio
@@ -58,9 +92,9 @@ async def main() -> None:
     """Show example on using the Parking Hamburg API client."""
     async with UDPHamburg() as client:
         disabled_parkings = await client.disabled_parkings()
-        park_and_ride = await client.park_and_ride()
+        park_and_rides = await client.park_and_rides()
         print(disabled_parkings)
-        print(park_and_ride)
+        print(park_and_rides)
 
 
 if __name__ == "__main__":
