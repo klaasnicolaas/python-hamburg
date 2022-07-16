@@ -91,13 +91,10 @@ class ParkAndRide:
         return cls(
             spot_id=str(data.get("id")),
             name=attr.get("name"),
-            construction_year=attr.get("baujahr"),
-            address=attr.get("adresse"),
-            public_transport_line=attr.get("linie"),
             park_type=attr.get("art"),
-            free_space=attr.get("stellplaetze_frei"),
-            capacity=attr.get("stellplaetze_gesamt"),
-            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 1),
+            address=attr.get("adresse"),
+            construction_year=attr.get("baujahr"),
+            public_transport_line=attr.get("linie"),
             disabled_parking_spaces=attr.get("stellplaetze_behinderte_gesamt"),
             tickets={
                 "day": attr.get("ticket_1_tag"),
@@ -105,6 +102,9 @@ class ParkAndRide:
                 "year": attr.get("ticket_1_jahr"),
             },
             url=attr.get("homepage"),
+            free_space=attr.get("stellplaetze_frei"),
+            capacity=attr.get("stellplaetze_gesamt"),
+            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 1),
             longitude=geo[0],
             latitude=geo[1],
             updated_at=datetime.strptime(
