@@ -9,7 +9,7 @@ readme = "README.md"
 homepage = "https://github.com/klaasnicolaas/python-hamburg"
 repository = "https://github.com/klaasnicolaas/python-hamburg"
 documentation = "https://github.com/klaasnicolaas/python-hamburg"
-keywords = ["urban", "data", "platform", "hamburg", "api", "async", "client"]
+keywords = ["urban", "data", "platform", "hamburg", "parking", "api", "async", "client"]
 classifiers = [
     "Framework :: AsyncIO",
     "Intended Audience :: Developers",

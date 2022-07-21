@@ -36,8 +36,8 @@ pip install hamburg
 
 You can read the following datasets with this package:
 
-- Disabled parking spaces (Behindertenstellplätze)
-- Park and rides occupancy (Park + Ride Anlagen)
+- Disabled parking spaces / Behindertenstellplätze (669)
+- Park and rides occupancy / Park + Ride Anlagen (32)
 
 There are a number of parameters you can set to retrieve the data:
 
