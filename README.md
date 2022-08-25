@@ -36,8 +36,9 @@ pip install hamburg
 
 You can read the following datasets with this package:
 
-- Disabled parking spaces / Behindertenstellplätze (669)
-- Park and rides occupancy / Park + Ride Anlagen (32)
+- [Disabled parking spaces / Behindertenstellplätze][disabled_parking] (671)
+- [Park and rides occupancy / Park + Ride Anlagen][park_and_ride] (31)
+- [Garages occupancy / Parkhäuser][garages] (46 live data / 125 total)
 
 There are a number of parameters you can set to retrieve the data:
 
@@ -64,7 +65,7 @@ There are a number of parameters you can set to retrieve the data:
 | :------- | :--- | :---------- |
 | `spot_id` | string | The ID of the park and ride |
 | `name` | string | The name of the park and ride |
-| `park_type` | string | The type of the park and ride |
+| `park_type` | string | The parking type of the park and ride |
 | `address` | string | The address of the park and ride |
 | `construction_year` | string | The year the park and ride was constructed |
 | `public_transport_line` | string | The public transport line the park and ride is connected to |
@@ -77,6 +78,29 @@ There are a number of parameters you can set to retrieve the data:
 | `longitude` | float | The longitude of the park and ride |
 | `latitude` | float | The latitude of the park and ride |
 | `updated_at` | datetime | The date and time the park and ride was last updated |
+
+### Garages
+
+Extra parameters to filter the data:
+
+- **available** (default: None) - Allows you to filter based on available spaces, using operators such as `<`, `<=`, `>` and `>=`.
+
+| Variable | Type | Description |
+| :------- | :--- | :---------- |
+| `spot_id` | string | The ID of the garage |
+| `name` | string | The name of the pgarage |
+| `park_type` | string | The parking type of the garage |
+| `disabled_parking_spaces` | int | The number of disabled parking spaces in the garage |
+| `status` | string | The status of the garage (**frei**, **nahezu belegt**, **besetzt** or **keine Auslastungsdaten**) |
+| `address` | string | The address of the garage |
+| `price` | string | The price list that is used for parking in a garage |
+| `data_origin` | string | Where data originally comes from |
+| `free_space` | int | The number of free spaces in the garage |
+| `capacity` | int | The capacity of the garage |
+| `availability_pct` | float | The percentage that is still available in the garage |
+| `longitude` | float | The longitude of the garage |
+| `latitude` | float | The latitude of the garage |
+| `updated_at` | datetime | The date and time the garage was last updated |
 
 </details>
 
@@ -189,6 +213,10 @@ SOFTWARE.
 
 [api]: https://api.hamburg.de/datasets/v1/
 [nipkaart]: https://www.nipkaart.nl
+
+[disabled_parking]: https://api.hamburg.de/datasets/v1/behindertenstellplaetze
+[park_and_ride]: https://api.hamburg.de/datasets/v1/p_und_r
+[garages]: https://api.hamburg.de/datasets/v1/parkhaeuser
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://github.com/klaasnicolaas/python-hamburg/actions/workflows/tests.yaml/badge.svg
