@@ -113,12 +113,14 @@ from hamburg import UDPHamburg
 
 
 async def main() -> None:
-    """Show example on using the Parking Hamburg API client."""
+    """Show example on using the UDP Hamburg API client."""
     async with UDPHamburg() as client:
         disabled_parkings = await client.disabled_parkings()
         park_and_rides = await client.park_and_rides()
+        garages = await client.garages()
         print(disabled_parkings)
         print(park_and_rides)
+        print(garages)
 
 
 if __name__ == "__main__":
