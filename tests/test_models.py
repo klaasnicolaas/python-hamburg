@@ -1,9 +1,11 @@
 """Test the models."""
+from datetime import datetime
+
 import aiohttp
 import pytest
 from aresponses import ResponsesMockServer
 
-from hamburg import DisabledParking, ParkAndRide, UDPHamburg
+from hamburg import DisabledParking, Garage, ParkAndRide, UDPHamburg
 
 from . import load_fixtures
 
@@ -58,3 +60,69 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
             assert isinstance(item.tickets, dict)
             assert isinstance(item.longitude, float)
             assert isinstance(item.latitude, float)
+            assert isinstance(item.updated_at, datetime) and item.updated_at is not None
+
+
+@pytest.mark.asyncio
+async def test_garages(aresponses: ResponsesMockServer) -> None:
+    """Test park and ride spaces function."""
+    aresponses.add(
+        "api.hamburg.de",
+        "/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items",
+        "GET",
+        aresponses.Response(
+            status=200,
+            headers={"Content-Type": "application/geo+json"},
+            text=load_fixtures("garages.geojson"),
+        ),
+    )
+    async with aiohttp.ClientSession() as session:
+        client = UDPHamburg(session=session)
+        spaces: list[Garage] = await client.garages()
+        assert spaces is not None
+        for item in spaces:
+            assert item.spot_id is not None
+            assert item.name is not None
+            assert item.status in [
+                "frei",
+                "nahezu belegt",
+                "besetzt",
+                "keine Auslastungsdaten",
+            ]
+            assert item.address is not None
+            assert isinstance(item.longitude, float)
+            assert isinstance(item.latitude, float)
+            assert isinstance(item.updated_at, datetime) or item.updated_at is None
+
+
+@pytest.mark.asyncio
+async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
+    """Test park and ride spaces function."""
+    aresponses.add(
+        "api.hamburg.de",
+        "/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items",
+        "GET",
+        aresponses.Response(
+            status=200,
+            headers={"Content-Type": "application/geo+json"},
+            text=load_fixtures("garages.geojson"),
+        ),
+    )
+    async with aiohttp.ClientSession() as session:
+        client = UDPHamburg(session=session)
+        spaces: list[Garage] = await client.garages(available=">=0")
+        assert spaces is not None
+        for item in spaces:
+            assert item.spot_id is not None
+            assert item.name is not None
+            assert item.status in [
+                "frei",
+                "nahezu belegt",
+                "besetzt",
+                "keine Auslastungsdaten",
+            ]
+            assert item.address is not None
+            assert item.capacity is None or item.capacity >= 0
+            assert isinstance(item.longitude, float)
+            assert isinstance(item.latitude, float)
+            assert isinstance(item.updated_at, datetime) or item.updated_at is None

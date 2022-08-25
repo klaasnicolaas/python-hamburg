@@ -13,7 +13,7 @@ from aiohttp import hdrs
 from yarl import URL
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
-from .models import DisabledParking, ParkAndRide
+from .models import DisabledParking, Garage, ParkAndRide
 
 
 @dataclass
@@ -133,6 +133,36 @@ class UDPHamburg:
         )
         for item in locations["features"]:
             results.append(ParkAndRide.from_dict(item))
+        return results
+
+    async def garages(
+        self, limit: int = 10, bulk: str = "false", available: str | None = None
+    ) -> list[Garage]:
+        """Get all garages.
+
+        Args:
+            limit: Number of items to return.
+            bulk: Whether to return all items or the limit.
+            available: Filter based on availability with operators.
+
+        Returns:
+            A list of Garage objects.
+        """
+        results: list[Garage] = []
+        params: dict[str, Any] = {"limit": limit, "bulk": bulk}
+
+        if available is not None:
+            params["frei"] = str(available)
+
+        locations = await self._request(
+            "parkhaeuser/collections/verkehr_parkhaeuser/items",
+            params=params,
+        )
+
+        for item in locations["features"]:
+            # By default filter out garages without location coordinates.
+            if item["geometry"] is not None:
+                results.append(Garage.from_dict(item))
         return results
 
     async def close(self) -> None:

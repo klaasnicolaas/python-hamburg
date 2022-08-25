@@ -111,3 +111,94 @@ class ParkAndRide:
                 attr.get("aktualitaet_belegungsdaten"), "%Y-%m-%d %H:%M:%S"
             ),
         )
+
+
+@dataclass
+class Garage:
+    """Object representing a garage."""
+
+    spot_id: str
+    name: str
+    park_type: str
+    disabled_parking_spaces: int | None
+    status: str
+    address: str
+    price: str
+    data_origin: str
+
+    free_space: int | None
+    capacity: int | None
+    availability_pct: float | None
+
+    longitude: float
+    latitude: float
+    updated_at: datetime | None
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> Garage:
+        """Return a Garage object from a dictionary.
+
+        Args:
+            data: The data from the API.
+
+        Returns:
+            A Garage object.
+        """
+
+        attr = data["properties"]
+        geo = data["geometry"]["coordinates"]
+        return cls(
+            spot_id=str(data.get("id")),
+            name=attr.get("name"),
+            park_type=attr.get("art"),
+            disabled_parking_spaces=attr.get("behindertenst"),
+            status=attr.get("situation"),
+            address=f"{attr.get('strasse')} {attr.get('hausnr')}",
+            price=attr.get("preise"),
+            data_origin=attr.get("datenherkunft"),
+            free_space=attr.get("frei"),
+            capacity=attr.get("stellplaetze_gesamt"),
+            availability_pct=availability_calc(
+                attr.get("frei"), attr.get("stellplaetze_gesamt")
+            ),
+            longitude=geo[0],
+            latitude=geo[1],
+            updated_at=strptime(attr.get("received"), "%d.%m.%Y, %H:%M"),
+        )
+
+
+def availability_calc(free_space: int, capacity: int, default: None = None) -> Any:
+    """Calculate the availability percentage.
+
+    Args:
+        free_space: The free space.
+        capacity: The capacity.
+        default: The default value.
+
+    Returns:
+        The availability percentage.
+    """
+    try:
+        return round(
+            (float(free_space) / float(capacity)) * 100,
+            1,
+        )
+    except (TypeError):
+        return default
+
+
+def strptime(date_string: str, date_format: str, default: None = None) -> Any:
+    """Strptime function with default value.
+
+    Args:
+        date_string: The date string.
+        date_format: The format of the date string.
+        default: The default value.
+
+    Returns:
+        The datetime object.
+    """
+    try:
+        return datetime.strptime(date_string, date_format)
+    except (ValueError, TypeError):
+        return default

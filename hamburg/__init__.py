@@ -2,7 +2,7 @@
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
 from .hamburg import UDPHamburg
-from .models import DisabledParking, ParkAndRide
+from .models import DisabledParking, Garage, ParkAndRide
 
 __all__ = [
     "UDPHamburg",
@@ -10,4 +10,5 @@ __all__ = [
     "UDPHamburgError",
     "DisabledParking",
     "ParkAndRide",
+    "Garage",
 ]
