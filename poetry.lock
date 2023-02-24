@@ -1595,14 +1595,14 @@ files = [
 
 [[package]]
 name = "types-cachetools"
-version = "5.2.1"
+version = "5.3.0.3"
 description = "Typing stubs for cachetools"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-cachetools-5.2.1.tar.gz", hash = "sha256:069cfc825697cd51445c1feabbe4edc1fae2b2315870e7a9a179a7c4a5851bee"},
-    {file = "types_cachetools-5.2.1-py3-none-any.whl", hash = "sha256:b496b7e364ba050c4eaadcc6582f2c9fbb04f8ee7141eb3b311a8589dbd4506a"},
+    {file = "types-cachetools-5.3.0.3.tar.gz", hash = "sha256:f8077c7de6810bb347e243a2d4fa08ef301dba9ce5f697892db58ecb5c304d10"},
+    {file = "types_cachetools-5.3.0.3-py3-none-any.whl", hash = "sha256:13bc10afc3d8038b0eeb7c684239ca5ec15329dc6a8571fce13448200049fbb7"},
 ]
 
 [[package]]
@@ -1853,4 +1853,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "8ed52505417d3411a5c816d06539ec4b08e4d3a0a8c7ba37d4e541d3d32c0ec2"
+content-hash = "fca329909f041a915e857a3d3846dc8b719f4dfc2684e98cfa120d86893a6f8b"
