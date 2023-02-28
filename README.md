@@ -193,7 +193,7 @@ poetry run pytest
 
 MIT License
 
-Copyright (c) 2022 Klaas Schoute
+Copyright (c) 2022-2023 Klaas Schoute
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -235,7 +235,7 @@ SOFTWARE.
 [issues-url]: https://github.com/klaasnicolaas/python-hamburg/issues
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-hamburg.svg
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-hamburg.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/5041849456b7348f3bc7/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-hamburg/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
