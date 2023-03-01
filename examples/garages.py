@@ -7,14 +7,9 @@ from hamburg import UDPHamburg
 
 
 async def main() -> None:
-    """Show example on using the Hamburg API client."""
+    """Show example on fetching the garage data of Hamburg."""
     async with UDPHamburg() as client:
-        disabled_parkings = await client.disabled_parkings(bulk="true")
-        park_and_rides = await client.park_and_rides(bulk="true")
         garages = await client.garages(bulk="true")
-
-        print(disabled_parkings)
-        print(park_and_rides)
 
         count: int
         for index, item in enumerate(garages, 1):
@@ -23,12 +18,12 @@ async def main() -> None:
 
         # Count unique id's in disabled_parkings
         unique_values: list[str] = []
-        for location in disabled_parkings:
+        for location in garages:
             unique_values.append(location.spot_id)
         num_values = len(set(unique_values))
 
         print("__________________________")
-        print(f"Total locations found: {count}")
+        print(f"Total garages found: {count}")
         print(f"Unique ID values: {num_values}")
 
 

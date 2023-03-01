@@ -3,7 +3,7 @@
     "features": [
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214848",
+            "id": "DE.HH.UP_P_UND_R_1857820",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -12,27 +12,21 @@
                 ]
             },
             "properties": {
-                "mail": "service@pr.hamburg",
-                "ticket_1_jahr": "100",
+                "ticket_1_jahr": "0",
+                "art": "Parkhaus",
+                "stellplaetze_frauen_gesamt": "0",
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "U1",
                 "oeffnungszeiten": "",
-                "stellplaetze_frei": "247",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:42:27",
-                "stellplaetze_behinderte_gesamt": "3",
-                "contactname": "P + R-Betriebsgesellschaft mbH",
-                "stellpl_frei_in_prozent": 70.57143,
-                "baujahr": "2007",
-                "einfahrtshoehe_in_meter": "2,1",
-                "art": "Parkhaus",
-                "stellplaetze_frauen_gesamt": "0",
-                "ticket_1_tag": "2",
+                "ticket_1_tag": "0",
+                "stellplaetze_frei": "335",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:50:01",
                 "fahrzeit_hbf": "27",
-                "phone": "040 / 32886623",
-                "ticket_30_tage": "20",
-                "barrierefrei": "ja",
-                "homepage": "www.pr.hamburg",
-                "fussweg_zur_station_in_meter": "100",
+                "stellplaetze_behinderte_gesamt": "3",
+                "ticket_30_tage": "0",
+                "barrierefrei": "nein",
+                "stellpl_frei_in_prozent": 95.71429,
+                "einfahrtshoehe_in_meter": "0",
                 "name": "Volksdorf",
                 "adresse": "Farmsener Landstraße 202, 22359 Hamburg",
                 "stellplaetze_gesamt": "350"
@@ -41,7 +35,7 @@
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214849",
+            "id": "DE.HH.UP_P_UND_R_1857821",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -50,27 +44,21 @@
                 ]
             },
             "properties": {
-                "mail": "service@pr.hamburg",
-                "ticket_1_jahr": "100",
+                "ticket_1_jahr": "0",
+                "art": "Parkhaus",
+                "stellplaetze_frauen_gesamt": "0",
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "U1",
                 "oeffnungszeiten": "",
-                "stellplaetze_frei": "192",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:36:20",
-                "stellplaetze_behinderte_gesamt": "3",
-                "contactname": "P + R-Betriebsgesellschaft mbH",
-                "stellpl_frei_in_prozent": 75.59055,
-                "baujahr": "2013",
-                "einfahrtshoehe_in_meter": "2",
-                "art": "Parkhaus",
-                "stellplaetze_frauen_gesamt": "0",
-                "ticket_1_tag": "2",
+                "ticket_1_tag": "0",
+                "stellplaetze_frei": "232",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:47:00",
                 "fahrzeit_hbf": "25",
-                "phone": "040 / 32886623",
-                "ticket_30_tage": "20",
-                "barrierefrei": "ja",
-                "homepage": "www.pr.hamburg",
-                "fussweg_zur_station_in_meter": "30",
+                "stellplaetze_behinderte_gesamt": "3",
+                "ticket_30_tage": "0",
+                "barrierefrei": "nein",
+                "stellpl_frei_in_prozent": 91.338585,
+                "einfahrtshoehe_in_meter": "0",
                 "name": "Meiendorfer Weg",
                 "adresse": "Meiendorfer Weg 127, 22359 Hamburg",
                 "stellplaetze_gesamt": "254"
@@ -79,7 +67,7 @@
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214850",
+            "id": "DE.HH.UP_P_UND_R_1857822",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -93,11 +81,11 @@
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "U1",
                 "oeffnungszeiten": "",
-                "stellplaetze_frei": "57",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:35:50",
+                "stellplaetze_frei": "27",
+                "aktualitaet_belegungsdaten": "2023-02-28  22:15:30",
                 "stellplaetze_behinderte_gesamt": "0",
                 "contactname": "P + R-Betriebsgesellschaft mbH",
-                "stellpl_frei_in_prozent": 63.333332,
+                "stellpl_frei_in_prozent": 30.0,
                 "baujahr": "1966",
                 "einfahrtshoehe_in_meter": "4,5",
                 "art": "Parkplatz",
@@ -117,7 +105,7 @@
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214851",
+            "id": "DE.HH.UP_P_UND_R_1857823",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -133,23 +121,23 @@
                 "linie": "S1, S11",
                 "oeffnungszeiten": "",
                 "ticket_1_tag": "0",
-                "stellplaetze_frei": "30",
-                "aktualitaet_belegungsdaten": "2022-07-05  23:52:09",
+                "stellplaetze_frei": "74",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:04:05",
                 "fahrzeit_hbf": "28",
                 "stellplaetze_behinderte_gesamt": "3",
                 "ticket_30_tage": "0",
                 "barrierefrei": "nein",
-                "stellpl_frei_in_prozent": 63.82979,
+                "stellpl_frei_in_prozent": 82.22222,
                 "einfahrtshoehe_in_meter": "0",
                 "name": "Poppenbüttel",
                 "adresse": "Tennigkeitweg 1b, 22391 Hamburg",
-                "stellplaetze_gesamt": "47"
+                "stellplaetze_gesamt": "90"
             },
             "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214852",
+            "id": "DE.HH.UP_P_UND_R_1857824",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -165,13 +153,13 @@
                 "linie": "S1, S11",
                 "oeffnungszeiten": "",
                 "ticket_1_tag": "0",
-                "stellplaetze_frei": "271",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:29:02",
+                "stellplaetze_frei": "324",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:57:35",
                 "fahrzeit_hbf": "28",
                 "stellplaetze_behinderte_gesamt": "3",
                 "ticket_30_tage": "0",
                 "barrierefrei": "nein",
-                "stellpl_frei_in_prozent": 74.246574,
+                "stellpl_frei_in_prozent": 88.76712,
                 "einfahrtshoehe_in_meter": "0",
                 "name": "Poppenbüttel",
                 "adresse": "Stormarnplatz 3, 22393 Hamburg",
@@ -181,7 +169,7 @@
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214853",
+            "id": "DE.HH.UP_P_UND_R_1857825",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -190,27 +178,21 @@
                 ]
             },
             "properties": {
-                "mail": "service@pr.hamburg",
-                "ticket_1_jahr": "100",
+                "ticket_1_jahr": "0",
+                "art": "Parkpalette",
+                "stellplaetze_frauen_gesamt": "0",
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "U1",
                 "oeffnungszeiten": "",
-                "stellplaetze_frei": "109",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:42:56",
-                "stellplaetze_behinderte_gesamt": "4",
-                "contactname": "P + R-Betriebsgesellschaft mbH",
-                "stellpl_frei_in_prozent": 58.28877,
-                "baujahr": "1968",
-                "einfahrtshoehe_in_meter": "2",
-                "art": "Parkpalette",
-                "stellplaetze_frauen_gesamt": "0",
-                "ticket_1_tag": "2",
+                "ticket_1_tag": "0",
+                "stellplaetze_frei": "175",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:47:25",
                 "fahrzeit_hbf": "22",
-                "phone": "040 / 32886623",
-                "ticket_30_tage": "20",
-                "barrierefrei": "ja",
-                "homepage": "www.pr.hamburg",
-                "fussweg_zur_station_in_meter": "180",
+                "stellplaetze_behinderte_gesamt": "4",
+                "ticket_30_tage": "0",
+                "barrierefrei": "nein",
+                "stellpl_frei_in_prozent": 93.582886,
+                "einfahrtshoehe_in_meter": "0",
                 "name": "Berne",
                 "adresse": "Berner Heerweg, 22159 Hamburg",
                 "stellplaetze_gesamt": "187"
@@ -219,7 +201,7 @@
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214854",
+            "id": "DE.HH.UP_P_UND_R_1857826",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -228,36 +210,30 @@
                 ]
             },
             "properties": {
-                "mail": "service@pr.hamburg",
-                "ticket_1_jahr": "100",
+                "ticket_1_jahr": "0",
+                "art": "Parkhaus",
+                "stellplaetze_frauen_gesamt": "0",
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "U2",
                 "oeffnungszeiten": "",
-                "stellplaetze_frei": "178",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:39:14",
-                "stellplaetze_behinderte_gesamt": "3",
-                "contactname": "P + R-Betriebsgesellschaft mbH",
-                "stellpl_frei_in_prozent": 51.895042,
-                "baujahr": "1990",
-                "einfahrtshoehe_in_meter": "2",
-                "art": "Parkhaus",
-                "stellplaetze_frauen_gesamt": "0",
-                "ticket_1_tag": "2",
+                "ticket_1_tag": "0",
+                "stellplaetze_frei": "333",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:45:11",
                 "fahrzeit_hbf": "16",
-                "phone": "040 / 32886623",
-                "ticket_30_tage": "20",
-                "barrierefrei": "ja",
-                "homepage": "www.pr.hamburg",
-                "fussweg_zur_station_in_meter": "20",
+                "stellplaetze_behinderte_gesamt": "3",
+                "ticket_30_tage": "0",
+                "barrierefrei": "nein",
+                "stellpl_frei_in_prozent": 96.521736,
+                "einfahrtshoehe_in_meter": "0",
                 "name": "Steinfurther Allee",
                 "adresse": "Möllner Landstraße 217, 22117 Hamburg",
-                "stellplaetze_gesamt": "343"
+                "stellplaetze_gesamt": "345"
             },
             "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214855",
+            "id": "DE.HH.UP_P_UND_R_1857827",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -271,11 +247,11 @@
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "RB81",
                 "oeffnungszeiten": "",
-                "stellplaetze_frei": "249",
-                "aktualitaet_belegungsdaten": "2022-07-01  02:50:36",
+                "stellplaetze_frei": "218",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:33:22",
                 "stellplaetze_behinderte_gesamt": "3",
                 "contactname": "P + R-Betriebsgesellschaft mbH",
-                "stellpl_frei_in_prozent": 78.79747,
+                "stellpl_frei_in_prozent": 68.98734,
                 "baujahr": "2003",
                 "einfahrtshoehe_in_meter": "1,9",
                 "art": "Parkhaus",
@@ -295,7 +271,7 @@
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214856",
+            "id": "DE.HH.UP_P_UND_R_1857828",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -311,23 +287,23 @@
                 "linie": "S2, S21",
                 "oeffnungszeiten": "",
                 "ticket_1_tag": "0",
-                "stellplaetze_frei": "197",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:34:56",
+                "stellplaetze_frei": "343",
+                "aktualitaet_belegungsdaten": "2023-02-28  23:31:31",
                 "fahrzeit_hbf": "20",
                 "stellplaetze_behinderte_gesamt": "4",
                 "ticket_30_tage": "0",
                 "barrierefrei": "nein",
-                "stellpl_frei_in_prozent": 51.16883,
+                "stellpl_frei_in_prozent": 85.111664,
                 "einfahrtshoehe_in_meter": "0",
                 "name": "Bergedorf",
                 "adresse": "Bergedorfer Strasse 85a, 21033 Hamburg",
-                "stellplaetze_gesamt": "385"
+                "stellplaetze_gesamt": "403"
             },
             "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_P_UND_R_1214857",
+            "id": "DE.HH.UP_P_UND_R_1857829",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -336,24 +312,20 @@
                 ]
             },
             "properties": {
-                "mail": "service@pr.hamburg",
-                "ticket_1_jahr": "100",
+                "ticket_1_jahr": "0",
                 "art": "Parkplatz",
                 "stellplaetze_frauen_gesamt": "0",
                 "stellplaetze_carsharing_gesamt": "0",
                 "linie": "S2, S21",
                 "oeffnungszeiten": "",
-                "ticket_1_tag": "2",
-                "stellplaetze_frei": "227",
-                "aktualitaet_belegungsdaten": "2022-07-13  15:28:07",
+                "ticket_1_tag": "0",
+                "stellplaetze_frei": "217",
+                "aktualitaet_belegungsdaten": "2023-02-28  21:55:37",
                 "fahrzeit_hbf": "17",
                 "stellplaetze_behinderte_gesamt": "0",
-                "phone": "040 / 32886623",
-                "ticket_30_tage": "20",
-                "barrierefrei": "ja",
-                "contactname": "P + R-Betriebsgesellschaft mbH",
-                "homepage": "www.pr.hamburg",
-                "stellpl_frei_in_prozent": 96.18644,
+                "ticket_30_tage": "0",
+                "barrierefrei": "nein",
+                "stellpl_frei_in_prozent": 91.94915,
                 "einfahrtshoehe_in_meter": "0",
                 "name": "Nettelnburg Nord",
                 "adresse": "Friedrich Frank Bogen 109, 21033 Hamburg",
@@ -364,43 +336,43 @@
     ],
     "links": [
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10",
             "rel": "self",
             "type": "application/geo+json",
             "title": "this document as JSON"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10",
             "rel": "alternate",
             "type": "text/html",
             "title": "this document as HTML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10",
             "rel": "alternate",
             "type": "application/gml+xml",
             "title": "this document as GML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10",
             "rel": "alternate",
             "type": "application/gml+xml;version=3.2",
             "title": "this document as GML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10",
             "rel": "alternate",
             "type": "application/gml+xml;version=3.2;profile=\"http://www.opengis.net/def/profile/ogc/2.0/gml-sf0\"",
             "title": "this document as GML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=0&limit=10",
             "rel": "alternate",
             "type": "application/gml+xml;version=3.2;profile=\"http://www.opengis.net/def/profile/ogc/2.0/gml-sf2\"",
             "title": "this document as GML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=10&limit=10&bulk=false",
+            "href": "https://api.hamburg.de/datasets/v1/p_und_r/collections/p_und_r/items?offset=10&limit=10",
             "rel": "next",
             "type": "application/geo+json",
             "title": "next page"
@@ -426,6 +398,6 @@
     ],
     "numberMatched": 32,
     "numberReturned": 10,
-    "timeStamp": "2022-07-13T13:52:53.822Z",
+    "timeStamp": "2023-02-28T23:07:07.247Z",
     "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
 }
