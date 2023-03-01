@@ -194,9 +194,9 @@ def availability_calc(
             (float(free_space) / float(capacity)) * 100,
             1,
         )
-    except (TypeError):
+    except TypeError:
         return default
-    except (ZeroDivisionError):
+    except ZeroDivisionError:
         return None
 
 
