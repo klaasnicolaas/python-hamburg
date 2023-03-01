@@ -1,8 +1,7 @@
 """Test the models."""
 from datetime import datetime
 
-import aiohttp
-import pytest
+from aiohttp import ClientSession
 from aresponses import ResponsesMockServer
 
 from hamburg import DisabledParking, Garage, ParkAndRide, UDPHamburg
@@ -10,7 +9,6 @@ from hamburg import DisabledParking, Garage, ParkAndRide, UDPHamburg
 from . import load_fixtures
 
 
-@pytest.mark.asyncio
 async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
     """Test all parking spaces function."""
     aresponses.add(
@@ -23,7 +21,7 @@ async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("disabled_parking.geojson"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
+    async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[DisabledParking] = await client.disabled_parkings()
         assert spaces is not None
@@ -36,7 +34,6 @@ async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
             assert item.latitude is not None
 
 
-@pytest.mark.asyncio
 async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
@@ -49,7 +46,7 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("park_and_ride.geojson"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
+    async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[ParkAndRide] = await client.park_and_rides()
         assert spaces is not None
@@ -57,13 +54,13 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
             assert item.spot_id is not None
             assert item.address is not None
             assert item.availability_pct is not None
+            assert item.updated_at is not None
             assert isinstance(item.tickets, dict)
             assert isinstance(item.longitude, float)
             assert isinstance(item.latitude, float)
-            assert isinstance(item.updated_at, datetime) and item.updated_at is not None
+            assert isinstance(item.updated_at, datetime)
 
 
-@pytest.mark.asyncio
 async def test_garages(aresponses: ResponsesMockServer) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
@@ -76,7 +73,7 @@ async def test_garages(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("garages.geojson"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
+    async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[Garage] = await client.garages()
         assert spaces is not None
@@ -95,7 +92,6 @@ async def test_garages(aresponses: ResponsesMockServer) -> None:
             assert isinstance(item.updated_at, datetime) or item.updated_at is None
 
 
-@pytest.mark.asyncio
 async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
@@ -108,7 +104,7 @@ async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("garages.geojson"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
+    async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[Garage] = await client.garages(available=">=0")
         assert spaces is not None

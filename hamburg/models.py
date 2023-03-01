@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
 
+import pytz
+
 
 @dataclass
 class DisabledParking:
@@ -18,13 +20,14 @@ class DisabledParking:
     latitude: float
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> DisabledParking:
+    def from_dict(cls: type[DisabledParking], data: dict[str, Any]) -> DisabledParking:
         """Return a DisabledParking object from a dictionary.
 
         Args:
             data: The data from the API.
 
-        Returns:
+        Returns
+        -------
             A DisabledParking object.
         """
 
@@ -34,7 +37,8 @@ class DisabledParking:
             Args:
                 string: The string to strip.
 
-            Returns:
+            Returns
+            -------
                 The string without spaces or None if the string is empty.
             """
             if string is None:
@@ -69,23 +73,23 @@ class ParkAndRide:
 
     free_space: int
     capacity: int
-    availability_pct: float
+    availability_pct: float | None
 
     longitude: float
     latitude: float
     updated_at: datetime
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> ParkAndRide:
+    def from_dict(cls: type[ParkAndRide], data: dict[str, Any]) -> ParkAndRide:
         """Return a ParkAndRide object from a dictionary.
 
         Args:
             data: The data from the API.
 
-        Returns:
+        Returns
+        -------
             A ParkAndRide object.
         """
-
         attr = data["properties"]
         geo = data["geometry"]["coordinates"]
         return cls(
@@ -108,8 +112,9 @@ class ParkAndRide:
             longitude=geo[0],
             latitude=geo[1],
             updated_at=datetime.strptime(
-                attr.get("aktualitaet_belegungsdaten"), "%Y-%m-%d %H:%M:%S"
-            ),
+                attr.get("aktualitaet_belegungsdaten"),
+                "%Y-%m-%d %H:%M:%S",
+            ).astimezone(pytz.timezone("Europe/Berlin")),
         )
 
 
@@ -124,7 +129,7 @@ class Garage:
     status: str
     address: str
     price: str
-    data_origin: str
+    data_origin: str | None
 
     free_space: int | None
     capacity: int | None
@@ -135,16 +140,16 @@ class Garage:
     updated_at: datetime | None
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> Garage:
+    def from_dict(cls: type[Garage], data: dict[str, Any]) -> Garage:
         """Return a Garage object from a dictionary.
 
         Args:
             data: The data from the API.
 
-        Returns:
+        Returns
+        -------
             A Garage object.
         """
-
         attr = data["properties"]
         geo = data["geometry"]["coordinates"]
         return cls(
@@ -159,7 +164,8 @@ class Garage:
             free_space=attr.get("frei"),
             capacity=attr.get("stellplaetze_gesamt"),
             availability_pct=availability_calc(
-                attr.get("frei"), attr.get("stellplaetze_gesamt")
+                attr.get("frei"),
+                attr.get("stellplaetze_gesamt"),
             ),
             longitude=geo[0],
             latitude=geo[1],
@@ -167,7 +173,11 @@ class Garage:
         )
 
 
-def availability_calc(free_space: int, capacity: int, default: None = None) -> Any:
+def availability_calc(
+    free_space: int,
+    capacity: int,
+    default: None = None,
+) -> float | None:
     """Calculate the availability percentage.
 
     Args:
@@ -175,7 +185,8 @@ def availability_calc(free_space: int, capacity: int, default: None = None) -> A
         capacity: The capacity.
         default: The default value.
 
-    Returns:
+    Returns
+    -------
         The availability percentage.
     """
     try:
@@ -185,6 +196,8 @@ def availability_calc(free_space: int, capacity: int, default: None = None) -> A
         )
     except (TypeError):
         return default
+    except (ZeroDivisionError):
+        return None
 
 
 def strptime(date_string: str, date_format: str, default: None = None) -> Any:
@@ -195,10 +208,13 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
         date_format: The format of the date string.
         default: The default value.
 
-    Returns:
+    Returns
+    -------
         The datetime object.
     """
     try:
-        return datetime.strptime(date_string, date_format)
+        return datetime.strptime(date_string, date_format).astimezone(
+            pytz.timezone("Europe/Berlin"),
+        )
     except (ValueError, TypeError):
         return default
