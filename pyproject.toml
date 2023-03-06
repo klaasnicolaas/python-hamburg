@@ -36,7 +36,7 @@ pytz = "^2022.7.1"
 Changelog = "https://github.com/klaasnicolaas/python-hamburg/releases"
 
 [tool.poetry.dev-dependencies]
-ruff = "^0.0.253"
+ruff = "^0.0.254"
 aresponses = "^2.1.6"
 black = "^23.1"
 blacken-docs = "^1.13.0"
