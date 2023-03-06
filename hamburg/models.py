@@ -24,9 +24,10 @@ class DisabledParking:
         """Return a DisabledParking object from a dictionary.
 
         Args:
+        ----
             data: The data from the API.
 
-        Returns
+        Returns:
         -------
             A DisabledParking object.
         """
@@ -35,9 +36,10 @@ class DisabledParking:
             """Strip spaces from a string.
 
             Args:
+            ----
                 string: The string to strip.
 
-            Returns
+            Returns:
             -------
                 The string without spaces or None if the string is empty.
             """
@@ -84,9 +86,10 @@ class ParkAndRide:
         """Return a ParkAndRide object from a dictionary.
 
         Args:
+        ----
             data: The data from the API.
 
-        Returns
+        Returns:
         -------
             A ParkAndRide object.
         """
@@ -144,9 +147,10 @@ class Garage:
         """Return a Garage object from a dictionary.
 
         Args:
+        ----
             data: The data from the API.
 
-        Returns
+        Returns:
         -------
             A Garage object.
         """
@@ -181,11 +185,12 @@ def availability_calc(
     """Calculate the availability percentage.
 
     Args:
+    ----
         free_space: The free space.
         capacity: The capacity.
         default: The default value.
 
-    Returns
+    Returns:
     -------
         The availability percentage.
     """
@@ -204,11 +209,12 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
     """Strptime function with default value.
 
     Args:
+    ----
         date_string: The date string.
         date_format: The format of the date string.
         default: The default value.
 
-    Returns
+    Returns:
     -------
         The datetime object.
     """

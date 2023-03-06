@@ -35,16 +35,17 @@ class UDPHamburg:
         """Handle a request to the Urban Data Platform API of Hamburg.
 
         Args:
+        ----
             uri: Request URI, without '/', for example, 'status'
             method: HTTP method to use, for example, 'GET'
             params: Extra options to improve or limit the response.
 
-        Returns
+        Returns:
         -------
             A Python dictionary (text) with the response from
             the Urban Data Platform API.
 
-        Raises
+        Raises:
         ------
             UDPHamburgConnectionError: Timeout occurred while
                 connecting to the Urban Data Platform API.
@@ -106,10 +107,11 @@ class UDPHamburg:
         """Get all disabled parking spaces.
 
         Args:
+        ----
             limit: Number of items to return.
             bulk: Whether to return all items or the limit.
 
-        Returns
+        Returns:
         -------
             A list of DisabledParking objects.
         """
@@ -131,10 +133,11 @@ class UDPHamburg:
         """Get all park and ride spaces.
 
         Args:
+        ----
             limit: Number of items to return.
             bulk: Whether to return all items or the limit.
 
-        Returns
+        Returns:
         -------
             A list of ParkAndRide objects.
         """
@@ -156,11 +159,12 @@ class UDPHamburg:
         """Get all garages.
 
         Args:
+        ----
             limit: Number of items to return.
             bulk: Whether to return all items or the limit.
             available: Filter based on availability with operators.
 
-        Returns
+        Returns:
         -------
             A list of Garage objects.
         """
