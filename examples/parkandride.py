@@ -11,16 +11,15 @@ async def main() -> None:
     async with UDPHamburg() as client:
         park_and_rides = await client.park_and_rides(bulk="true")
 
-        count: int
-        for index, item in enumerate(park_and_rides, 1):
-            count = index
+        count: int = len(park_and_rides)
+        for item in park_and_rides:
             print(item)
 
         # Count unique id's in disabled_parkings
-        unique_values: list[str] = []
-        for location in park_and_rides:
-            unique_values.append(location.spot_id)
-        num_values = len(set(unique_values))
+        unique_values: list[str] = list(
+            {location.spot_id for location in park_and_rides},
+        )
+        num_values = len(unique_values)
 
         print("__________________________")
         print(f"Total park and rides found: {count}")
