@@ -115,15 +115,11 @@ class UDPHamburg:
         -------
             A list of DisabledParking objects.
         """
-        results: list[DisabledParking] = []
         locations = await self._request(
             "behindertenstellplaetze/collections/verkehr_behindertenparkpl/items",
             params={"limit": limit, "bulk": bulk},
         )
-
-        for item in locations["features"]:
-            results.append(DisabledParking.from_dict(item))
-        return results
+        return [DisabledParking.from_dict(item) for item in locations["features"]]
 
     async def park_and_rides(
         self,
@@ -141,14 +137,11 @@ class UDPHamburg:
         -------
             A list of ParkAndRide objects.
         """
-        results: list[ParkAndRide] = []
         locations = await self._request(
             "p_und_r/collections/p_und_r/items",
             params={"limit": limit, "bulk": bulk},
         )
-        for item in locations["features"]:
-            results.append(ParkAndRide.from_dict(item))
-        return results
+        return [ParkAndRide.from_dict(item) for item in locations["features"]]
 
     async def garages(
         self,
@@ -168,7 +161,6 @@ class UDPHamburg:
         -------
             A list of Garage objects.
         """
-        results: list[Garage] = []
         params: dict[str, Any] = {"limit": limit, "bulk": bulk}
 
         if available is not None:
@@ -179,11 +171,12 @@ class UDPHamburg:
             params=params,
         )
 
-        for item in locations["features"]:
-            # By default filter out garages without location coordinates.
-            if item["geometry"] is not None:
-                results.append(Garage.from_dict(item))
-        return results
+        # By default filter out garages without location coordinates.
+        return [
+            Garage.from_dict(item)
+            for item in locations["features"]
+            if item["geometry"] is not None
+        ]
 
     async def close(self) -> None:
         """Close open client session."""
