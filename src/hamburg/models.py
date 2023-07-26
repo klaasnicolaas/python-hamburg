@@ -102,16 +102,19 @@ class ParkAndRide:
             address=attr.get("adresse"),
             construction_year=attr.get("baujahr"),
             public_transport_line=attr.get("linie"),
-            disabled_parking_spaces=attr.get("stellplaetze_behinderte_gesamt"),
+            disabled_parking_spaces=int(attr.get("stellplaetze_behinderte_gesamt")),
             tickets={
                 "day": attr.get("ticket_1_tag"),
                 "month": attr.get("ticket_30_tage"),
                 "year": attr.get("ticket_1_jahr"),
             },
             url=attr.get("homepage"),
-            free_space=attr.get("stellplaetze_frei"),
-            capacity=attr.get("stellplaetze_gesamt"),
-            availability_pct=round(attr.get("stellpl_frei_in_prozent"), 1),
+            free_space=int(attr.get("stellplaetze_frei")),
+            capacity=int(attr.get("stellplaetze_gesamt")),
+            availability_pct=availability_calc(
+                attr.get("stellplaetze_frei"),
+                attr.get("stellplaetze_gesamt"),
+            ),
             longitude=geo[0],
             latitude=geo[1],
             updated_at=datetime.strptime(
