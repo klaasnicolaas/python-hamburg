@@ -5,7 +5,7 @@ import asyncio
 import socket
 from dataclasses import dataclass
 from importlib import metadata
-from typing import Any, cast
+from typing import TYPE_CHECKING, Any, cast
 
 import async_timeout
 from aiohttp import ClientError, ClientSession
@@ -14,6 +14,9 @@ from yarl import URL
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
 from .models import DisabledParking, Garage, ParkAndRide
+
+if TYPE_CHECKING:
+    from typing_extensions import Self
 
 
 @dataclass
@@ -183,7 +186,7 @@ class UDPHamburg:
         if self.session and self._close_session:
             await self.session.close()
 
-    async def __aenter__(self) -> UDPHamburg:
+    async def __aenter__(self) -> Self:
         """Async enter.
 
         Returns
@@ -192,7 +195,7 @@ class UDPHamburg:
         """
         return self
 
-    async def __aexit__(self, *_exc_info: str) -> None:
+    async def __aexit__(self, *_exc_info: object) -> None:
         """Async exit.
 
         Args:
