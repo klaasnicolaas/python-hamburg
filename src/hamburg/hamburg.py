@@ -101,14 +101,12 @@ class UDPHamburg:
     async def disabled_parkings(
         self,
         limit: int = 10,
-        bulk: str = "false",
     ) -> list[DisabledParking]:
         """Get all disabled parking spaces.
 
         Args:
         ----
             limit: Number of items to return.
-            bulk: Whether to return all items or the limit.
 
         Returns:
         -------
@@ -116,21 +114,19 @@ class UDPHamburg:
         """
         locations = await self._request(
             "behindertenstellplaetze/collections/verkehr_behindertenparkpl/items",
-            params={"limit": limit, "bulk": bulk},
+            params={"limit": limit},
         )
         return [DisabledParking.from_dict(item) for item in locations["features"]]
 
     async def park_and_rides(
         self,
         limit: int = 10,
-        bulk: str = "false",
     ) -> list[ParkAndRide]:
         """Get all park and ride spaces.
 
         Args:
         ----
             limit: Number of items to return.
-            bulk: Whether to return all items or the limit.
 
         Returns:
         -------
@@ -138,14 +134,13 @@ class UDPHamburg:
         """
         locations = await self._request(
             "p_und_r/collections/p_und_r/items",
-            params={"limit": limit, "bulk": bulk},
+            params={"limit": limit},
         )
         return [ParkAndRide.from_dict(item) for item in locations["features"]]
 
     async def garages(
         self,
         limit: int = 10,
-        bulk: str = "false",
         available: str | None = None,
     ) -> list[Garage]:
         """Get all garages.
@@ -153,14 +148,13 @@ class UDPHamburg:
         Args:
         ----
             limit: Number of items to return.
-            bulk: Whether to return all items or the limit.
             available: Filter based on availability with operators.
 
         Returns:
         -------
             A list of Garage objects.
         """
-        params: dict[str, Any] = {"limit": limit, "bulk": bulk}
+        params: dict[str, Any] = {"limit": limit}
 
         if available is not None:
             params["frei"] = str(available)

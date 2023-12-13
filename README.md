@@ -36,14 +36,13 @@ pip install hamburg
 
 You can read the following datasets with this package:
 
-- [Disabled parking spaces / Behindertenstellplätze][disabled_parking] (813)
-- [Park and rides occupancy / Park + Ride Anlagen][park_and_ride] (32)
+- [Disabled parking spaces / Behindertenstellplätze][disabled_parking] (901)
+- [Park and rides occupancy / Park + Ride Anlagen][park_and_ride] (33)
 - [Garages occupancy / Parkhäuser][garages] (45 live data / 124 total)
 
 There are a number of parameters you can set to retrieve the data:
 
 - **limit** (default: 10) - How many results you want to retrieve.
-- **bulk** (default: false) - If string is true, number of rows will be ignored and the entire result will be returned.
 
 <details>
     <summary>Click here to get more details</summary>
