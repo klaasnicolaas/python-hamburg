@@ -1,8 +1,8 @@
 {
     "type": "FeatureCollection",
-    "numberReturned": 10,
+    "numberReturned": 15,
     "numberMatched": 125,
-    "timeStamp": "2023-12-13T02:46:17Z",
+    "timeStamp": "2023-12-13T03:12:31Z",
     "features": [
         {
             "type": "Feature",
@@ -230,23 +230,164 @@
                 "situation": "keine Auslastungsdaten",
                 "stellplaetze_gesamt": 20
             }
+        },
+        {
+            "type": "Feature",
+            "id": 1110,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.987101013707624,
+                    53.74433123095954
+                ]
+            },
+            "properties": {
+                "name": "Haslohfurth",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Schleswiger Hagen",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
+                "stellplaetze_gesamt": 10
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10001,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.991765371268867,
+                    53.55266864038071
+                ]
+            },
+            "properties": {
+                "name": "Alsterhaus",
+                "art": "Parkhaus",
+                "preise": "Reguläres Parkentgelt 8:00 - 21:00 Uhr: 1. angef. Std. 4,00 EUR| je weitere Std. 4,00 EUR | Tageshöchstsatz: 28,00 EUR\nNachttarif 21:00 - 8:00 Uhr: 1. angef. Std. 1,50 EUR| je weitere Std. 1,50 EUR | Höchstsatz: 5,00 EUR",
+                "strasse": "Bei der Stadtwassermühle",
+                "hausnr": "16-20",
+                "einfahrt": "Poststraße",
+                "oeffnungszeit": "täglich 24 Stunden",
+                "frauenst": 6,
+                "behindertenst": 3,
+                "einfahrtshoehe_in_meter": 1.95,
+                "datenherkunft": "BWVI_V",
+                "punkt": "multi",
+                "pur": "nein",
+                "frei": 0,
+                "gesamt": 0,
+                "auslastung": 9.0,
+                "status": "frei",
+                "situation": "frei",
+                "stellplaetze_gesamt": 87,
+                "received": "13.12.2023, 04:12"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10002,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.00958322064467,
+                    53.55472284388092
+                ]
+            },
+            "properties": {
+                "name": "Am Hauptbahnhof",
+                "art": "Parkhaus",
+                "preise": "2,00 EUR/30min | Tageshöchstsatz 20,00 EUR| Nachttarif 1,50 EUR",
+                "strasse": "Borgesch",
+                "hausnr": "1",
+                "einfahrt": "über Baumeisterstraße",
+                "oeffnungszeit": "täglich 24 Stunden",
+                "frauenst": 6,
+                "behindertenst": 2,
+                "einfahrtshoehe_in_meter": 2.0,
+                "datenherkunft": "BWVI_V",
+                "punkt": "multi",
+                "pur": "nein",
+                "frei": 305,
+                "gesamt": 547,
+                "auslastung": 44.0,
+                "status": "frei",
+                "situation": "frei",
+                "stellplaetze_gesamt": 547,
+                "received": "13.12.2023, 04:12"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10003,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.966681016135265,
+                    53.547888106582114
+                ]
+            },
+            "properties": {
+                "name": "Bavaria Office",
+                "art": "Tiefgarage",
+                "preise": "1. Stunde 1,50 EUR|2. Stunde 1,50 EUR|jede weitere Std. 2,00 EUR|Tageshöchstsatz 11,00 EUR",
+                "strasse": "Zirkusweg",
+                "hausnr": "4",
+                "oeffnungszeit": "täglich 24 Stunden",
+                "behindertenst": 3,
+                "einfahrtshoehe_in_meter": 2.0,
+                "datenherkunft": "BWVI_V",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
+                "stellplaetze_gesamt": 58
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10004,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.021679345337438,
+                    53.55667681278098
+                ]
+            },
+            "properties": {
+                "name": "Berliner Tor",
+                "art": "Tiefgarage",
+                "preise": "2,80 EUR/h|Tageshöchstsatz 18,00 EUR",
+                "strasse": "Berliner Tor",
+                "hausnr": "3a",
+                "oeffnungszeit": "täglich 24 Stunden",
+                "behindertenst": 4,
+                "einfahrtshoehe_in_meter": 2.0,
+                "datenherkunft": "BWVI_V",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
+                "stellplaetze_gesamt": 328
+            }
         }
     ],
     "links": [
         {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&f=json",
+            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=15&f=json",
             "rel": "self",
             "type": "application/geo+json",
             "title": "This document"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&f=html",
+            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=15&f=html",
             "rel": "alternate",
             "type": "text/html",
             "title": "This document as HTML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=10",
+            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=15&offset=15",
             "rel": "next",
             "type": "application/geo+json",
             "title": "Next page"
