@@ -10,7 +10,7 @@ from hamburg import UDPHamburg
 async def main() -> None:
     """Show example on fetching the disabled parking data of Hamburg."""
     async with UDPHamburg() as client:
-        disabled_parkings = await client.disabled_parkings(bulk="true")
+        disabled_parkings = await client.disabled_parkings(limit=1000)
 
         count = len(disabled_parkings)
         for item in disabled_parkings:

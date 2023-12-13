@@ -1,238 +1,178 @@
 {
     "type": "FeatureCollection",
+    "numberReturned": 10,
+    "numberMatched": 901,
+    "timeStamp": "2023-12-13T02:47:38Z",
     "features": [
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_6533",
+            "id": 7460,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.136488565334192,
-                    53.57184239718967
+                    9.946928367655032,
+                    53.58310925250252
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "nahe_adresse": "Öjendorfer Damm 60                                                                                                                                                                                                                                             "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Steenwisch 105                                                                                                                                                                                                                                                 ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_6534",
+            "id": 7461,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.943512736274236,
-                    53.576948071704145
+                    9.938008848629853,
+                    53.58105081830283
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "befristung": "Sa 13-17 h                                                                                                                                                                                                                                                     ",
-                "nahe_adresse": "Grundstraße 15                                                                                                                                                                                                                                                 "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Langenfelder Damm 67                                                                                                                                                                                                                                           ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5732",
+            "id": 7462,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.991383356737023,
-                    53.56064752354905
+                    9.935971223239319,
+                    53.582530970209184
                 ]
             },
             "properties": {
-                "anzahl": 4,
-                "nahe_adresse": "Alsterterrasse 1                                                                                                                                                                                                                                               "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Langenfelder Damm 80a                                                                                                                                                                                                                                          ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5733",
+            "id": 7463,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.210270721370556,
-                    53.48672239781089
+                    9.93573271213673,
+                    53.582446224018476
                 ]
             },
             "properties": {
-                "anzahl": 2,
-                "nahe_adresse": "Vierlandenstraße 26                                                                                                                                                                                                                                            "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Langenfelder Damm 91                                                                                                                                                                                                                                           ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5734",
+            "id": 7464,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.057542282470111,
-                    53.5467037730202
+                    9.9299854940711,
+                    53.563378917405764
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "nahe_adresse": "Steinbeker Straße 23                                                                                                                                                                                                                                           "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Stresemannstraße 318                                                                                                                                                                                                                                           ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5735",
+            "id": 7465,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.014272520020077,
-                    53.55426665809251
+                    9.886326617358094,
+                    53.575552880265796
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "nahe_adresse": "Steindamm 56                                                                                                                                                                                                                                                   "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Bertrand-Russell-Straße 4                                                                                                                                                                                                                                      ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5736",
+            "id": 7466,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.023685537856784,
-                    53.55294967747482
+                    10.045029564340489,
+                    53.56500132834542
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "nahe_adresse": "Beim Berliner Tor 36                                                                                                                                                                                                                                           "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Kiebitzstraße 44a                                                                                                                                                                                                                                              ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5737",
+            "id": 7467,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.98481795579909,
-                    53.54844118579113
+                    10.008951895770426,
+                    53.55181415963955
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "befristung": "                                                                                                                                                                                                                                                               ",
-                "beschreibung": "                                                                                                                                                                                                                                                               ",
-                "nahe_adresse": "Admiralitätstraße 4                                                                                                                                                                                                                                            "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Steintorplatz 2                                                                                                                                                                                                                                                ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5738",
+            "id": 7468,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.9905683360313,
-                    53.549464733036814
+                    10.01523796793553,
+                    53.554727297628716
                 ]
             },
             "properties": {
-                "anzahl": 1,
-                "befristung": "Mo. - Fr.  8 - 18  h                                                                                                                                                                                                                                           ",
-                "beschreibung": "                                                                                                                                                                                                                                                               ",
-                "nahe_adresse": "Adolphsplatz  6                                                                                                                                                                                                                                                "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Steindamm 70                                                                                                                                                                                                                                                   ",
+                "anzahl": 1
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_BEHINDERTENPARKPL_5739",
+            "id": 7469,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.199078388047594,
-                    53.485445964799624
+                    10.012553064840606,
+                    53.54923736617713
                 ]
             },
             "properties": {
-                "anzahl": 2,
-                "befristung": "                                                                                                                                                                                                                                                               ",
-                "beschreibung": "                                                                                                                                                                                                                                                               ",
-                "nahe_adresse": "Albert-Gebel-Straße 28                                                                                                                                                                                                                                         "
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "nahe_adresse": "Münzplatz 1                                                                                                                                                                                                                                                    ",
+                "anzahl": 1
+            }
         }
     ],
     "links": [
         {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=0&limit=10",
+            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?limit=10&f=json",
             "rel": "self",
             "type": "application/geo+json",
-            "title": "this document as JSON"
+            "title": "This document"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=0&limit=10",
+            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?limit=10&f=html",
             "rel": "alternate",
             "type": "text/html",
-            "title": "this document as HTML"
+            "title": "This document as HTML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=0&limit=10",
-            "rel": "alternate",
-            "type": "application/gml+xml",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=0&limit=10",
-            "rel": "alternate",
-            "type": "application/gml+xml;version=3.2",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=0&limit=10",
-            "rel": "alternate",
-            "type": "application/gml+xml;version=3.2;profile=\"http://www.opengis.net/def/profile/ogc/2.0/gml-sf0\"",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=0&limit=10",
-            "rel": "alternate",
-            "type": "application/gml+xml;version=3.2;profile=\"http://www.opengis.net/def/profile/ogc/2.0/gml-sf2\"",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=10&limit=10",
+            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items?offset=10",
             "rel": "next",
             "type": "application/geo+json",
-            "title": "next page"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl",
-            "rel": "collection",
-            "type": "application/json",
-            "title": "Collection as JSON"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl",
-            "rel": "collection",
-            "type": "text/html",
-            "title": "Collection as HTML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl",
-            "rel": "collection",
-            "type": "application/xml",
-            "title": "Collection as XML"
+            "title": "Next page"
         }
-    ],
-    "numberMatched": 813,
-    "numberReturned": 10,
-    "timeStamp": "2023-02-28T23:08:01.482Z",
-    "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    ]
 }

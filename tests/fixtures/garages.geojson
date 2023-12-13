@@ -1,462 +1,255 @@
 {
     "type": "FeatureCollection",
+    "numberReturned": 10,
+    "numberMatched": 125,
+    "timeStamp": "2023-12-13T02:46:17Z",
     "features": [
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1012",
+            "id": 1012,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.854910321230964,
-                    53.31594499402919
+                    9.854910321231317,
+                    53.315944994046816
                 ]
             },
             "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Drosselweg",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1012,
                 "name": "Suerhop",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Drosselweg",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
                 "stellplaetze_gesamt": 20
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1018",
+            "id": 1018,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.708917158162505,
-                    53.169697241217335
+                    10.70891715816324,
+                    53.16969724123711
                 ]
             },
             "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Straßenrand",
-                "einfahrt": "Bahnhofsweg",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1018,
                 "name": "Dahlenburg",
+                "art": "Straßenrand",
+                "preise": " ",
+                "einfahrt": "Bahnhofsweg",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
                 "stellplaetze_gesamt": 6
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1024",
+            "id": 1024,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.559367386150653,
-                    53.44666277890725
+                    9.559367386150887,
+                    53.446662778925074
                 ]
             },
             "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Straßenrand",
-                "einfahrt": "Ruschwedeler Straße",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1024,
                 "name": "Ruschwedel",
-                "stellplaetze_gesamt": 6
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1044",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    10.536790255558564,
-                    53.33713455277733
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Bahnhofstraße",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1044,
-                "name": "Echem",
-                "stellplaetze_gesamt": 18
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1077",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.943234302538322,
-                    53.75551453551634
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Buchenweg",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1077,
-                "name": "Tanneneck",
-                "stellplaetze_gesamt": 32
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1094",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.94568764115261,
-                    53.839173876296904
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Norderstraße",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1094,
-                "name": "Holstentherme"
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1096",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.973234743614292,
-                    53.82324048642519
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Werner-von-Siemens-Straße",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1096,
-                "name": "Kaltenkirchen Süd"
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1097",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.938193235695309,
-                    53.8444738898245
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Kieler Straße",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1097,
-                "name": "dodenhof"
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1106",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.989528817030955,
-                    53.73430903612132
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Am Umspannwerk",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
-                "preise": " ",
-                "pur": "nein",
-                "id": 1106,
-                "name": "Quickborner Straße",
-                "stellplaetze_gesamt": 22
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1107",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.990362195229567,
-                    53.6957619788654
-                ]
-            },
-            "properties": {
-                "oeffnungszeit": "<Null>",
-                "punkt": "multi",
                 "art": "Straßenrand",
-                "einfahrt": "Dahlienstieg",
-                "situation": "keine Auslastungsdaten",
-                "datenherkunft": "HVV",
                 "preise": " ",
-                "pur": "nein",
-                "id": 1107,
-                "name": "Richtweg",
-                "stellplaetze_gesamt": 20
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_1110",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.987101013707194,
-                    53.74433123094114
-                ]
-            },
-            "properties": {
+                "einfahrt": "Ruschwedeler Straße",
                 "oeffnungszeit": "<Null>",
-                "punkt": "multi",
-                "art": "Parkplatz",
-                "einfahrt": "Schleswiger Hagen",
-                "situation": "keine Auslastungsdaten",
                 "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
+                "stellplaetze_gesamt": 6
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1044,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.53679025555922,
+                    53.33713455279623
+                ]
+            },
+            "properties": {
+                "name": "Echem",
+                "art": "Parkplatz",
                 "preise": " ",
-                "pur": "nein",
-                "id": 1110,
-                "name": "Haslohfurth",
-                "stellplaetze_gesamt": 10
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_10001",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.991765371268444,
-                    53.552668640362626
-                ]
-            },
-            "properties": {
-                "strasse": "Bei der Stadtwassermühle",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "behindertenst": 3,
-                "art": "Parkhaus",
-                "einfahrt": "Poststraße",
-                "frei": 0,
-                "frauenst": 6,
-                "datenherkunft": "BWVI_V",
-                "preise": "Reguläres Parkentgelt 8:00 - 21:00 Uhr: 1. angef. Std. 4,00 EUR| je weitere Std. 4,00 EUR | Tageshöchstsatz: 28,00 EUR\nNachttarif 21:00 - 8:00 Uhr: 1. angef. Std. 1,50 EUR| je weitere Std. 1,50 EUR | Höchstsatz: 5,00 EUR",
-                "pur": "nein",
-                "auslastung": 2,
-                "received": "01.03.2023, 00:05",
+                "einfahrt": "Bahnhofstraße",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
                 "punkt": "multi",
-                "status": "frei",
-                "hausnr": "16-20",
-                "situation": "frei",
-                "einfahrtshoehe_in_meter": 1.95,
-                "id": 10001,
-                "gesamt": 0,
-                "name": "Alsterhaus",
-                "stellplaetze_gesamt": 0
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_10002",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    10.009583220644242,
-                    53.55472284386281
-                ]
-            },
-            "properties": {
-                "strasse": "Borgesch",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "behindertenst": 2,
-                "art": "Parkhaus",
-                "frei": 387,
-                "frauenst": 6,
-                "datenherkunft": "BWVI_V",
-                "preise": "1,40 EUR/30min |Tageshöchstsatz 14,60 EUR|Tageskarte bei Vorauszahlung 9,70 EUR",
                 "pur": "nein",
-                "auslastung": 29,
-                "received": "01.03.2023, 00:05",
-                "punkt": "multi",
-                "status": "frei",
-                "hausnr": "1",
-                "situation": "frei",
-                "einfahrtshoehe_in_meter": 2.0,
-                "id": 10002,
-                "gesamt": 547,
-                "name": "Am Hauptbahnhof",
-                "stellplaetze_gesamt": 547
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-        },
-        {
-            "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_10003",
-            "geometry": null,
-            "properties": {
-                "strasse": "Zirkusweg",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "behindertenst": 3,
-                "art": "Tiefgarage",
-                "datenherkunft": "BWVI_V",
-                "preise": "1. Stunde 1,50 EUR|2. Stunde 1,50 EUR|jede weitere Std. 2,00 EUR|Tageshöchstsatz 11,00 EUR",
-                "pur": "nein",
-                "punkt": "multi",
-                "hausnr": "4",
                 "situation": "keine Auslastungsdaten",
-                "einfahrtshoehe_in_meter": 2.0,
-                "id": 10003,
-                "name": "Bavaria Office",
-                "stellplaetze_gesamt": 58
-            },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+                "stellplaetze_gesamt": 18
+            }
         },
         {
             "type": "Feature",
-            "id": "DE.HH.UP_VERKEHR_PARKHAEUSER_10004",
+            "id": 1077,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    10.021679345337,
-                    53.556676812762866
+                    9.943234302538734,
+                    53.75551453553472
                 ]
             },
             "properties": {
-                "strasse": "Berliner Tor",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "behindertenst": 4,
-                "art": "Tiefgarage",
-                "datenherkunft": "BWVI_V",
-                "preise": "2,80 EUR/h|Tageshöchstsatz 18,00 EUR",
-                "pur": "nein",
+                "name": "Tanneneck",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Buchenweg",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
                 "punkt": "multi",
-                "hausnr": "3a",
+                "pur": "nein",
                 "situation": "keine Auslastungsdaten",
-                "einfahrtshoehe_in_meter": 2.0,
-                "id": 10004,
-                "name": "Berliner Tor",
-                "stellplaetze_gesamt": 328
+                "stellplaetze_gesamt": 32
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1094,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.945687641153029,
+                    53.83917387631545
+                ]
             },
-            "srsName": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+            "properties": {
+                "name": "Holstentherme",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Norderstraße",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1096,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.97323474361472,
+                    53.82324048644373
+                ]
+            },
+            "properties": {
+                "name": "Kaltenkirchen Süd",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Werner-von-Siemens-Straße",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1097,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.938193235695724,
+                    53.84447388984305
+                ]
+            },
+            "properties": {
+                "name": "dodenhof",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Kieler Straße",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1106,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.989528817031388,
+                    53.7343090361397
+                ]
+            },
+            "properties": {
+                "name": "Quickborner Straße",
+                "art": "Parkplatz",
+                "preise": " ",
+                "einfahrt": "Am Umspannwerk",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
+                "stellplaetze_gesamt": 22
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1107,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.990362195229995,
+                    53.695761978883716
+                ]
+            },
+            "properties": {
+                "name": "Richtweg",
+                "art": "Straßenrand",
+                "preise": " ",
+                "einfahrt": "Dahlienstieg",
+                "oeffnungszeit": "<Null>",
+                "datenherkunft": "HVV",
+                "punkt": "multi",
+                "pur": "nein",
+                "situation": "keine Auslastungsdaten",
+                "stellplaetze_gesamt": 20
+            }
         }
     ],
     "links": [
         {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=0&limit=15",
+            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&f=json",
             "rel": "self",
             "type": "application/geo+json",
-            "title": "this document as JSON"
+            "title": "This document"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=0&limit=15",
+            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&f=html",
             "rel": "alternate",
             "type": "text/html",
-            "title": "this document as HTML"
+            "title": "This document as HTML"
         },
         {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=0&limit=15",
-            "rel": "alternate",
-            "type": "application/gml+xml",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=0&limit=15",
-            "rel": "alternate",
-            "type": "application/gml+xml;version=3.2",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=0&limit=15",
-            "rel": "alternate",
-            "type": "application/gml+xml;version=3.2;profile=\"http://www.opengis.net/def/profile/ogc/2.0/gml-sf0\"",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=0&limit=15",
-            "rel": "alternate",
-            "type": "application/gml+xml;version=3.2;profile=\"http://www.opengis.net/def/profile/ogc/2.0/gml-sf2\"",
-            "title": "this document as GML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=15&limit=15",
+            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=10",
             "rel": "next",
             "type": "application/geo+json",
-            "title": "next page"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser",
-            "rel": "collection",
-            "type": "application/json",
-            "title": "Collection as JSON"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser",
-            "rel": "collection",
-            "type": "text/html",
-            "title": "Collection as HTML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser",
-            "rel": "collection",
-            "type": "application/xml",
-            "title": "Collection as XML"
+            "title": "Next page"
         }
-    ],
-    "numberMatched": 125,
-    "numberReturned": 15,
-    "timeStamp": "2023-02-28T23:06:06.033Z",
-    "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    ]
 }
