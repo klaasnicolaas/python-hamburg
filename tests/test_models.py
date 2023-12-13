@@ -5,13 +5,16 @@ from datetime import datetime
 
 from aiohttp import ClientSession
 from aresponses import ResponsesMockServer
+from syrupy.assertion import SnapshotAssertion
 
 from hamburg import DisabledParking, Garage, ParkAndRide, UDPHamburg
 
 from . import load_fixtures
 
 
-async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
+async def test_all_parking_spaces(
+    aresponses: ResponsesMockServer, snapshot: SnapshotAssertion
+) -> None:
     """Test all parking spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -26,7 +29,7 @@ async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[DisabledParking] = await client.disabled_parkings()
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
             assert isinstance(item, DisabledParking)
             assert item.spot_id is not None
@@ -36,7 +39,9 @@ async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
             assert item.latitude is not None
 
 
-async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
+async def test_park_and_rides(
+    aresponses: ResponsesMockServer, snapshot: SnapshotAssertion
+) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -51,7 +56,7 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[ParkAndRide] = await client.park_and_rides()
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
             assert item.spot_id is not None
             assert item.address is not None
@@ -63,7 +68,9 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
             assert isinstance(item.updated_at, datetime)
 
 
-async def test_garages(aresponses: ResponsesMockServer) -> None:
+async def test_garages(
+    aresponses: ResponsesMockServer, snapshot: SnapshotAssertion
+) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -78,7 +85,7 @@ async def test_garages(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[Garage] = await client.garages()
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
             assert item.spot_id is not None
             assert item.name is not None
@@ -94,7 +101,9 @@ async def test_garages(aresponses: ResponsesMockServer) -> None:
             assert isinstance(item.updated_at, datetime) or item.updated_at is None
 
 
-async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
+async def test_garages_live_data(
+    aresponses: ResponsesMockServer, snapshot: SnapshotAssertion
+) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -109,7 +118,7 @@ async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[Garage] = await client.garages(available=">=0")
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
             assert item.spot_id is not None
             assert item.name is not None

@@ -27,18 +27,18 @@ packages = [
 [tool.poetry.dependencies]
 aiohttp = ">=3.0.0"
 python = "^3.11"
-yarl = ">=1.6.0"
 pytz = ">=2022.7.1,<2024.0.0"
+yarl = ">=1.6.0"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/klaasnicolaas/python-hamburg/issues"
 Changelog = "https://github.com/klaasnicolaas/python-hamburg/releases"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "0.1.7"
 aresponses = "2.1.6"
 blacken-docs = "1.16.0"
 codespell = "2.2.6"
+covdefaults = "2.3.0"
 coverage = {version = "7.3.2", extras = ["toml"]}
 mypy = "1.7.1"
 pre-commit = "3.6.0"
@@ -47,9 +47,10 @@ pylint = "3.0.3"
 pytest = "7.4.3"
 pytest-asyncio = "0.23.2"
 pytest-cov = "4.1.0"
-yamllint = "1.33.0"
-covdefaults = "2.3.0"
+ruff = "0.1.7"
+syrupy = "^4.6.0"
 types-pytz = "2023.3.1.1"
+yamllint = "1.33.0"
 
 [tool.coverage.run]
 plugins = ["covdefaults"]
@@ -93,19 +94,11 @@ warn_return_any = true
 warn_unused_configs = true
 warn_unused_ignores = true
 
+[tool.pylint.MASTER]
+ignore = ["tests"]
+
 [tool.pylint.BASIC]
-good-names = [
-  "_",
-  "ex",
-  "fp",
-  "i",
-  "id",
-  "j",
-  "k",
-  "on",
-  "Run",
-  "T",
-]
+good-names = ["_", "ex", "fp", "i", "id", "j", "k", "on", "Run", "T"]
 
 [tool.pylint."MESSAGES CONTROL"]
 disable= [
@@ -130,24 +123,18 @@ asyncio_mode = "auto"
 [tool.ruff]
 select = ["ALL"]
 ignore = [
-  "ANN101", # Self... explanatory
-  "ANN401", # Opinioated warning on disallowing dynamically typed expressions
-  "D203", # Conflicts with other rules
-  "D213", # Conflicts with other rules
-  "D417", # False positives in some occasions
+  "ANN101",  # Self... explanatory
+  "ANN102",  # cls... just as useless
+  "ANN401",  # Opinioated warning on disallowing dynamically typed expressions
+  "D203",    # Conflicts with other rules
+  "D213",    # Conflicts with other rules
+  "D417",    # False positives in some occasions
   "PLR2004", # Just annoying, not really useful
+  "SLOT000", # Has a bug with enums: https://github.com/astral-sh/ruff/issues/5748
 
-  # Formatter conflicts
+  # Conflicts with the Ruff formatter
   "COM812",
-  "COM819",
-  "D206",
-  "E501",
   "ISC001",
-  "Q000",
-  "Q001",
-  "Q002",
-  "Q003",
-  "W191",
 ]
 
 [tool.ruff.flake8-pytest-style]
