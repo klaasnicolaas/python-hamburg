@@ -1,213 +1,9 @@
 {
     "type": "FeatureCollection",
-    "numberReturned": 15,
+    "numberReturned": 4,
     "numberMatched": 125,
     "timeStamp": "2023-12-13T03:12:31Z",
     "features": [
-        {
-            "type": "Feature",
-            "id": 1012,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.854910321231317,
-                    53.315944994046816
-                ]
-            },
-            "properties": {
-                "name": "Suerhop",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Drosselweg",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 20
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1018,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    10.70891715816324,
-                    53.16969724123711
-                ]
-            },
-            "properties": {
-                "name": "Dahlenburg",
-                "art": "Straßenrand",
-                "preise": " ",
-                "einfahrt": "Bahnhofsweg",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 6
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1024,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.559367386150887,
-                    53.446662778925074
-                ]
-            },
-            "properties": {
-                "name": "Ruschwedel",
-                "art": "Straßenrand",
-                "preise": " ",
-                "einfahrt": "Ruschwedeler Straße",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 6
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1044,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    10.53679025555922,
-                    53.33713455279623
-                ]
-            },
-            "properties": {
-                "name": "Echem",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Bahnhofstraße",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 18
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1077,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.943234302538734,
-                    53.75551453553472
-                ]
-            },
-            "properties": {
-                "name": "Tanneneck",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Buchenweg",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 32
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1094,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.945687641153029,
-                    53.83917387631545
-                ]
-            },
-            "properties": {
-                "name": "Holstentherme",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Norderstraße",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten"
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1096,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.97323474361472,
-                    53.82324048644373
-                ]
-            },
-            "properties": {
-                "name": "Kaltenkirchen Süd",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Werner-von-Siemens-Straße",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten"
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1097,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.938193235695724,
-                    53.84447388984305
-                ]
-            },
-            "properties": {
-                "name": "dodenhof",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Kieler Straße",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten"
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1106,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.989528817031388,
-                    53.7343090361397
-                ]
-            },
-            "properties": {
-                "name": "Quickborner Straße",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Am Umspannwerk",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 22
-            }
-        },
         {
             "type": "Feature",
             "id": 1107,
@@ -279,11 +75,11 @@
                 "punkt": "multi",
                 "pur": "nein",
                 "frei": 0,
-                "gesamt": 0,
+                "gesamt": 87,
                 "auslastung": 9.0,
                 "status": "frei",
                 "situation": "frei",
-                "stellplaetze_gesamt": 87,
+                "stellplaetze_gesamt": 0,
                 "received": "13.12.2023, 04:12"
             }
         },
@@ -318,58 +114,6 @@
                 "situation": "frei",
                 "stellplaetze_gesamt": 547,
                 "received": "13.12.2023, 04:12"
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 10003,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.966681016135265,
-                    53.547888106582114
-                ]
-            },
-            "properties": {
-                "name": "Bavaria Office",
-                "art": "Tiefgarage",
-                "preise": "1. Stunde 1,50 EUR|2. Stunde 1,50 EUR|jede weitere Std. 2,00 EUR|Tageshöchstsatz 11,00 EUR",
-                "strasse": "Zirkusweg",
-                "hausnr": "4",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "behindertenst": 3,
-                "einfahrtshoehe_in_meter": 2.0,
-                "datenherkunft": "BWVI_V",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 58
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 10004,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    10.021679345337438,
-                    53.55667681278098
-                ]
-            },
-            "properties": {
-                "name": "Berliner Tor",
-                "art": "Tiefgarage",
-                "preise": "2,80 EUR/h|Tageshöchstsatz 18,00 EUR",
-                "strasse": "Berliner Tor",
-                "hausnr": "3a",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "behindertenst": 4,
-                "einfahrtshoehe_in_meter": 2.0,
-                "datenherkunft": "BWVI_V",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 328
             }
         }
     ],
