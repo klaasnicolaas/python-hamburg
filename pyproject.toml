@@ -35,7 +35,7 @@ pytz = ">=2022.7.1,<2024.0.0"
 Changelog = "https://github.com/klaasnicolaas/python-hamburg/releases"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "0.1.8"
+ruff = "0.1.9"
 aresponses = "2.1.6"
 blacken-docs = "1.16.0"
 codespell = "2.2.6"
