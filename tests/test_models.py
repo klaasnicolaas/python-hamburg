@@ -102,12 +102,12 @@ async def test_garages_live_data(
         aresponses.Response(
             status=200,
             headers={"Content-Type": "application/geo+json"},
-            text=load_fixtures("garages.geojson"),
+            text=load_fixtures("garages_live.geojson"),
         ),
     )
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
-        spaces: list[Garage] = await client.garages(available=">=0")
+        spaces: list[Garage] = await client.garages(set_filter="frei>=0")
         assert spaces == snapshot
         for item in spaces:
             assert isinstance(item, Garage)

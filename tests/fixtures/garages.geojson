@@ -1,140 +1,225 @@
 {
-    "type": "FeatureCollection",
-    "numberReturned": 4,
-    "numberMatched": 125,
-    "timeStamp": "2023-12-13T03:12:31Z",
-    "features": [
-        {
-            "type": "Feature",
-            "id": 1107,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.990362195229995,
-                    53.695761978883716
-                ]
-            },
-            "properties": {
-                "name": "Richtweg",
-                "art": "Straßenrand",
-                "preise": " ",
-                "einfahrt": "Dahlienstieg",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 20
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 1110,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.987101013707624,
-                    53.74433123095954
-                ]
-            },
-            "properties": {
-                "name": "Haslohfurth",
-                "art": "Parkplatz",
-                "preise": " ",
-                "einfahrt": "Schleswiger Hagen",
-                "oeffnungszeit": "<Null>",
-                "datenherkunft": "HVV",
-                "punkt": "multi",
-                "pur": "nein",
-                "situation": "keine Auslastungsdaten",
-                "stellplaetze_gesamt": 10
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 10001,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.991765371268867,
-                    53.55266864038071
-                ]
-            },
-            "properties": {
-                "name": "Alsterhaus",
-                "art": "Parkhaus",
-                "preise": "Reguläres Parkentgelt 8:00 - 21:00 Uhr: 1. angef. Std. 4,00 EUR| je weitere Std. 4,00 EUR | Tageshöchstsatz: 28,00 EUR\nNachttarif 21:00 - 8:00 Uhr: 1. angef. Std. 1,50 EUR| je weitere Std. 1,50 EUR | Höchstsatz: 5,00 EUR",
-                "strasse": "Bei der Stadtwassermühle",
-                "hausnr": "16-20",
-                "einfahrt": "Poststraße",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "frauenst": 6,
-                "behindertenst": 3,
-                "einfahrtshoehe_in_meter": 1.95,
-                "datenherkunft": "BWVI_V",
-                "punkt": "multi",
-                "pur": "nein",
-                "frei": 0,
-                "gesamt": 87,
-                "auslastung": 9.0,
-                "status": "frei",
-                "situation": "frei",
-                "stellplaetze_gesamt": 0,
-                "received": "13.12.2023, 04:12"
-            }
-        },
-        {
-            "type": "Feature",
-            "id": 10002,
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    10.00958322064467,
-                    53.55472284388092
-                ]
-            },
-            "properties": {
-                "name": "Am Hauptbahnhof",
-                "art": "Parkhaus",
-                "preise": "2,00 EUR/30min | Tageshöchstsatz 20,00 EUR| Nachttarif 1,50 EUR",
-                "strasse": "Borgesch",
-                "hausnr": "1",
-                "einfahrt": "über Baumeisterstraße",
-                "oeffnungszeit": "täglich 24 Stunden",
-                "frauenst": 6,
-                "behindertenst": 2,
-                "einfahrtshoehe_in_meter": 2.0,
-                "datenherkunft": "BWVI_V",
-                "punkt": "multi",
-                "pur": "nein",
-                "frei": 305,
-                "gesamt": 547,
-                "auslastung": 44.0,
-                "status": "frei",
-                "situation": "frei",
-                "stellplaetze_gesamt": 547,
-                "received": "13.12.2023, 04:12"
-            }
-        }
-    ],
-    "links": [
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=15&f=json",
-            "rel": "self",
-            "type": "application/geo+json",
-            "title": "This document"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=15&f=html",
-            "rel": "alternate",
-            "type": "text/html",
-            "title": "This document as HTML"
-        },
-        {
-            "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=15&offset=15",
-            "rel": "next",
-            "type": "application/geo+json",
-            "title": "Next page"
-        }
-    ]
+  "type": "FeatureCollection",
+  "numberReturned": 10,
+  "numberMatched": 125,
+  "timeStamp": "2024-02-11T02:17:45Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1012,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.854910321231317, 53.315944994046816]
+      },
+      "properties": {
+        "name": "Suerhop",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Drosselweg",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1018,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.70891715816324, 53.16969724123711]
+      },
+      "properties": {
+        "name": "Dahlenburg",
+        "art": "Straßenrand",
+        "preise": " ",
+        "einfahrt": "Bahnhofsweg",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1024,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.559367386150887, 53.446662778925074]
+      },
+      "properties": {
+        "name": "Ruschwedel",
+        "art": "Straßenrand",
+        "preise": " ",
+        "einfahrt": "Ruschwedeler Straße",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1044,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.53679025555922, 53.33713455279623]
+      },
+      "properties": {
+        "name": "Echem",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Bahnhofstraße",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1077,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.943234302538734, 53.75551453553472]
+      },
+      "properties": {
+        "name": "Tanneneck",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Buchenweg",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 32
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1094,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.945687641153029, 53.83917387631545]
+      },
+      "properties": {
+        "name": "Holstentherme",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Norderstraße",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1096,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.97323474361472, 53.82324048644373]
+      },
+      "properties": {
+        "name": "Kaltenkirchen Süd",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Werner-von-Siemens-Straße",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1097,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.938193235695724, 53.84447388984305]
+      },
+      "properties": {
+        "name": "dodenhof",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Kieler Straße",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1106,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.989528817031388, 53.7343090361397]
+      },
+      "properties": {
+        "name": "Quickborner Straße",
+        "art": "Parkplatz",
+        "preise": " ",
+        "einfahrt": "Am Umspannwerk",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1107,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.990362195229995, 53.695761978883716]
+      },
+      "properties": {
+        "name": "Richtweg",
+        "art": "Straßenrand",
+        "preise": " ",
+        "einfahrt": "Dahlienstieg",
+        "oeffnungszeit": "<Null>",
+        "datenherkunft": "HVV",
+        "punkt": "multi",
+        "pur": "nein",
+        "situation": "keine Auslastungsdaten",
+        "stellplaetze_gesamt": 20
+      }
+    }
+  ],
+  "links": [
+    {
+      "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&f=json",
+      "rel": "self",
+      "type": "application/geo+json",
+      "title": "This document"
+    },
+    {
+      "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&f=html",
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML"
+    },
+    {
+      "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?offset=10",
+      "rel": "next",
+      "type": "application/geo+json",
+      "title": "Next page"
+    }
+  ]
 }

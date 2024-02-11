@@ -144,14 +144,14 @@ class UDPHamburg:
     async def garages(
         self,
         limit: int = 10,
-        available: str | None = None,
+        set_filter: str | None = None,
     ) -> list[Garage]:
         """Get all garages.
 
         Args:
         ----
             limit: Number of items to return.
-            available: Filter based on availability with operators.
+            set_filter: Filter the garages by a defined filter expression.
 
         Returns:
         -------
@@ -160,8 +160,8 @@ class UDPHamburg:
         """
         params: dict[str, Any] = {"limit": limit}
 
-        if available is not None:
-            params["frei"] = str(available)
+        if set_filter is not None:
+            params["filter"] = str(set_filter)
 
         locations = await self._request(
             "parkhaeuser/collections/verkehr_parkhaeuser/items",

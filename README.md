@@ -82,7 +82,7 @@ There are a number of parameters you can set to retrieve the data:
 
 Extra parameters to filter the data:
 
-- **available** (default: None) - Allows you to filter based on available spaces, using operators such as `<`, `<=`, `>` and `>=`.
+- **set_filter** (default: None) - Allows you to filter based on filter expressions, see [here](https://api.hamburg.de/datasets/v1/parkhaeuser/api?f=html#/Access%20data/verkehr_parkhaeuser.getItems) for more information.
 
 | Variable | Type | Description |
 | :------- | :--- | :---------- |
