@@ -1,7 +1,6 @@
 """Test the models."""
 from __future__ import annotations
 
-import pytz
 from aiohttp import ClientSession
 from aresponses import ResponsesMockServer
 from syrupy.assertion import SnapshotAssertion
@@ -54,12 +53,6 @@ async def test_park_and_rides(
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[ParkAndRide] = await client.park_and_rides()
-
-        # Convert received updated_at timestamps to Europe/Berlin timezone
-        for item in spaces:
-            assert isinstance(item, ParkAndRide)
-            item.updated_at = item.updated_at.astimezone(pytz.timezone("Europe/Berlin"))
-
         assert spaces == snapshot
 
 

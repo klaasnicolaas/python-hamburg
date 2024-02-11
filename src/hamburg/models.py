@@ -123,7 +123,7 @@ class ParkAndRide:
             updated_at=datetime.strptime(
                 attr.get("aktualitaet_belegungsdaten"),
                 "%Y-%m-%d %H:%M:%S",
-            ).astimezone(pytz.timezone("Europe/Berlin")),
+            ).replace(tzinfo=pytz.timezone("Europe/Berlin")),
         )
 
 
