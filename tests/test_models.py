@@ -1,8 +1,6 @@
 """Test the models."""
 from __future__ import annotations
 
-from datetime import datetime
-
 from aiohttp import ClientSession
 from aresponses import ResponsesMockServer
 from syrupy.assertion import SnapshotAssertion
@@ -81,13 +79,6 @@ async def test_garages(
         assert spaces == snapshot
         for item in spaces:
             assert isinstance(item, Garage)
-            assert item.status in [
-                "frei",
-                "nahezu belegt",
-                "besetzt",
-                "keine Auslastungsdaten",
-            ]
-            assert isinstance(item.updated_at, datetime) or item.updated_at is None
 
 
 async def test_garages_live_data(
@@ -111,11 +102,3 @@ async def test_garages_live_data(
         assert spaces == snapshot
         for item in spaces:
             assert isinstance(item, Garage)
-            assert item.status in [
-                "frei",
-                "nahezu belegt",
-                "besetzt",
-                "keine Auslastungsdaten",
-            ]
-            assert item.capacity is None or item.capacity >= 0
-            assert isinstance(item.updated_at, datetime) or item.updated_at is None
