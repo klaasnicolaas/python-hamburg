@@ -49,6 +49,7 @@ class UDPHamburg:
             UDPHamburgConnectionError: Timeout occurred while
                 connecting to the Urban Data Platform API.
             UDPHamburgError: If the data is not valid.
+
         """
         version = metadata.version(__package__)
         url = URL.build(
@@ -111,6 +112,7 @@ class UDPHamburg:
         Returns:
         -------
             A list of DisabledParking objects.
+
         """
         locations = await self._request(
             "behindertenstellplaetze/collections/verkehr_behindertenparkpl/items",
@@ -131,6 +133,7 @@ class UDPHamburg:
         Returns:
         -------
             A list of ParkAndRide objects.
+
         """
         locations = await self._request(
             "p_und_r/collections/p_und_r/items",
@@ -153,6 +156,7 @@ class UDPHamburg:
         Returns:
         -------
             A list of Garage objects.
+
         """
         params: dict[str, Any] = {"limit": limit}
 
@@ -182,6 +186,7 @@ class UDPHamburg:
         Returns
         -------
             The Urban Data Platform object.
+
         """
         return self
 
@@ -191,5 +196,6 @@ class UDPHamburg:
         Args:
         ----
             _exc_info: Exec type.
+
         """
         await self.close()
