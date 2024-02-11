@@ -37,7 +37,10 @@ async def test_all_parking_spaces(
             assert item.limitation is None or isinstance(item.limitation, str)
 
 
-async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
+async def test_park_and_rides(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -52,19 +55,19 @@ async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[ParkAndRide] = await client.park_and_rides()
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
-            assert item.spot_id is not None
-            assert item.address is not None
-            assert item.availability_pct is not None
-            assert item.updated_at is not None
+            assert isinstance(item, ParkAndRide)
             assert isinstance(item.tickets, dict)
             assert isinstance(item.longitude, float)
             assert isinstance(item.latitude, float)
             assert isinstance(item.updated_at, datetime)
 
 
-async def test_garages(aresponses: ResponsesMockServer) -> None:
+async def test_garages(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -79,23 +82,24 @@ async def test_garages(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[Garage] = await client.garages()
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
-            assert item.spot_id is not None
-            assert item.name is not None
+            assert isinstance(item, Garage)
             assert item.status in [
                 "frei",
                 "nahezu belegt",
                 "besetzt",
                 "keine Auslastungsdaten",
             ]
-            assert item.address is not None
             assert isinstance(item.longitude, float)
             assert isinstance(item.latitude, float)
             assert isinstance(item.updated_at, datetime) or item.updated_at is None
 
 
-async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
+async def test_garages_live_data(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+) -> None:
     """Test park and ride spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -110,17 +114,15 @@ async def test_garages_live_data(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[Garage] = await client.garages(available=">=0")
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
-            assert item.spot_id is not None
-            assert item.name is not None
+            assert isinstance(item, Garage)
             assert item.status in [
                 "frei",
                 "nahezu belegt",
                 "besetzt",
                 "keine Auslastungsdaten",
             ]
-            assert item.address is not None
             assert item.capacity is None or item.capacity >= 0
             assert isinstance(item.longitude, float)
             assert isinstance(item.latitude, float)
