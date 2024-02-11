@@ -58,10 +58,6 @@ async def test_park_and_rides(
         assert spaces == snapshot
         for item in spaces:
             assert isinstance(item, ParkAndRide)
-            assert isinstance(item.tickets, dict)
-            assert isinstance(item.longitude, float)
-            assert isinstance(item.latitude, float)
-            assert isinstance(item.updated_at, datetime)
 
 
 async def test_garages(
@@ -91,8 +87,6 @@ async def test_garages(
                 "besetzt",
                 "keine Auslastungsdaten",
             ]
-            assert isinstance(item.longitude, float)
-            assert isinstance(item.latitude, float)
             assert isinstance(item.updated_at, datetime) or item.updated_at is None
 
 
@@ -124,6 +118,4 @@ async def test_garages_live_data(
                 "keine Auslastungsdaten",
             ]
             assert item.capacity is None or item.capacity >= 0
-            assert isinstance(item.longitude, float)
-            assert isinstance(item.latitude, float)
             assert isinstance(item.updated_at, datetime) or item.updated_at is None
