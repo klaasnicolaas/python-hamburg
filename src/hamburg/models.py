@@ -120,10 +120,9 @@ class ParkAndRide:
             ),
             longitude=geo[0],
             latitude=geo[1],
-            updated_at=datetime.strptime(
-                attr.get("aktualitaet_belegungsdaten"),
-                "%Y-%m-%d %H:%M:%S",
-            ).astimezone(pytz.timezone("Europe/Berlin")),
+            updated_at=strptime(
+                attr.get("aktualitaet_belegungsdaten"), "%Y-%m-%d %H:%M:%S"
+            ),
         )
 
 
@@ -136,8 +135,8 @@ class Garage:
     park_type: str
     disabled_parking_spaces: int | None
     status: str
-    address: str
-    price: str
+    address: str | None
+    price: str | None
     data_origin: str | None
 
     free_space: int | None
@@ -169,8 +168,10 @@ class Garage:
             park_type=attr.get("art"),
             disabled_parking_spaces=attr.get("behindertenst"),
             status=attr.get("situation"),
-            address=f"{attr.get('strasse')} {attr.get('hausnr')}",
-            price=attr.get("preise"),
+            address=f"{attr.get('strasse')} {attr.get('hausnr')}"
+            if attr.get("strasse")
+            else None,
+            price=None if attr.get("preise") == " " else attr.get("preise"),
             data_origin=attr.get("datenherkunft"),
             free_space=attr.get("frei"),
             capacity=attr.get("stellplaetze_gesamt"),
@@ -228,8 +229,8 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
 
     """
     try:
-        return datetime.strptime(date_string, date_format).astimezone(
-            pytz.timezone("Europe/Berlin"),
+        return datetime.strptime(date_string, date_format).replace(
+            tzinfo=pytz.timezone("Europe/Berlin")
         )
     except (ValueError, TypeError):
         return default

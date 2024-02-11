@@ -1,0 +1,314 @@
+{
+  "type": "FeatureCollection",
+  "numberReturned": 10,
+  "numberMatched": 45,
+  "timeStamp": "2024-02-11T02:15:53Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 10001,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.991765371268867, 53.55266864038071]
+      },
+      "properties": {
+        "name": "Alsterhaus",
+        "art": "Parkhaus",
+        "preise": "Reguläres Parkentgelt 8:00 - 21:00 Uhr: 1. angef. Std. 4,00 EUR| je weitere Std. 4,00 EUR | Tageshöchstsatz: 28,00 EUR\nNachttarif 21:00 - 8:00 Uhr: 1. angef. Std. 1,50 EUR| je weitere Std. 1,50 EUR | Höchstsatz: 5,00 EUR",
+        "strasse": "Bei der Stadtwassermühle",
+        "hausnr": "16-20",
+        "einfahrt": "Poststraße",
+        "oeffnungszeit": "täglich 24 Stunden",
+        "frauenst": 6,
+        "behindertenst": 3,
+        "einfahrtshoehe_in_meter": 1.95,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 83,
+        "gesamt": 87,
+        "auslastung": 5.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 87,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10002,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.00958322064467, 53.55472284388092]
+      },
+      "properties": {
+        "name": "Am Hauptbahnhof",
+        "art": "Parkhaus",
+        "preise": "2,00 EUR/30min | Tageshöchstsatz 20,00 EUR| Nachttarif 1,50 EUR",
+        "strasse": "Borgesch",
+        "hausnr": "1",
+        "einfahrt": "über Baumeisterstraße",
+        "oeffnungszeit": "täglich 24 Stunden",
+        "frauenst": 6,
+        "behindertenst": 2,
+        "einfahrtshoehe_in_meter": 2.0,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 341,
+        "gesamt": 547,
+        "auslastung": 38.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 547,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10006,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.986648065481441, 53.55194593956319]
+      },
+      "properties": {
+        "name": "Parkhaus Stadthöfe (Bleichenhof)",
+        "art": "Parkhaus",
+        "preise": "3,90 EUR/h|Tageshöchstsatz 32,00 EUR",
+        "strasse": "Große Bleichen",
+        "hausnr": "35",
+        "oeffnungszeit": "täglich 24 Stunden",
+        "behindertenst": 2,
+        "einfahrtshoehe_in_meter": 2.0,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 216,
+        "gesamt": 590,
+        "auslastung": 63.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 590,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10007,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.987726815763814, 53.561135227527565]
+      },
+      "properties": {
+        "name": "Radison Blu",
+        "art": "Tiefgarage",
+        "preise": "1. Std. 3,00 EUR|je weitere angef. Std. 3,00 EUR|Tagesentgelt 25,00 EUR\n",
+        "strasse": "Marseiller Straße",
+        "hausnr": "1",
+        "oeffnungszeit": "Mo- So 0:00 -24:00 Uhr",
+        "behindertenst": 1,
+        "einfahrtshoehe_in_meter": 1.8,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 0,
+        "gesamt": 0,
+        "auslastung": 100.0,
+        "status": "frei",
+        "situation": "besetzt",
+        "stellplaetze_gesamt": 0,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10010,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.00496859112039, 53.54689636607786]
+      },
+      "properties": {
+        "name": "Deichtorhallen",
+        "art": "Parkplatz",
+        "preise": "1 Stunde 2,00 EUR|Tageshöchstsatz 20,00 EUR|Nachttarif 22 - 6 Uhr 1,00 EUR",
+        "strasse": "Deichtorstraße",
+        "hausnr": "2",
+        "einfahrt": "Oberbaumbrücke",
+        "oeffnungszeit": "täglich 24 Stunden",
+        "behindertenst": 2,
+        "einfahrtshoehe_in_meter": 2.0,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 35,
+        "gesamt": 37,
+        "auslastung": 5.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 37,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10011,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.985204026496357, 53.55121608632646]
+      },
+      "properties": {
+        "name": "Deutsch Japanisches Zentrum",
+        "art": "Tiefgarage",
+        "preise": "Reguläres Parkentgelt: erste 30 Min. 1,50 EUR |zweite 30 Min. 1,50 EUR |Je weitere Std. 3,00 EUR |Tag (24 Std.) 22,00 EUR\nSondertarif (P-Card): erste 30 Min. 0,50 EUR |zweite 30 Min. 1,00 EUR |Je weitere Std. 1,50 EUR |Tag (24 Std.) 9,00 EUR",
+        "strasse": "Stadthausbrücke",
+        "hausnr": "1",
+        "oeffnungszeit": "Mo-So 06:00-23:00 Uhr",
+        "behindertenst": 12,
+        "einfahrtshoehe_in_meter": 2.0,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 240,
+        "gesamt": 291,
+        "auslastung": 18.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 291,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10012,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.984820179727356, 53.54130630618613]
+      },
+      "properties": {
+        "name": "Elbphilharmonie",
+        "art": "Parkhaus",
+        "preise": "Parkbereich A Kurzparker (Ebenen OG1 – OG5): 1. Stunde 5,00 EUR|jede weitere Std. 5,00 EUR|Tageshöchstsatz 50,00 EUR & Parkbereich B (UG1 = „Hotel-Bereich“): 1. Stunde 6,00 EUR|jede weitere Std. 6,00 EUR|Tageshöchstsatz 50,00 EUR & Parkbereich C (EG = Umfahrung): 5 Minuten freie |Durchfahrt | je weitere 5 Minuten 1,00 EUR | Tageshöchstsatz 90,00 EUR",
+        "strasse": "Platz der Deutschen Einheit",
+        "hausnr": "1",
+        "oeffnungszeit": "Mo.-So 0-24 Uhr",
+        "behindertenst": 23,
+        "einfahrtshoehe_in_meter": 2.1,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 243,
+        "gesamt": 277,
+        "auslastung": 12.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 277,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10013,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.99667711811397, 53.551947553640574]
+      },
+      "properties": {
+        "name": "Europa-Passage",
+        "art": "Parkhaus",
+        "preise": "Reguläres Parkentgelt: 1. Std 2,50 EUR |jede weitere Std. 2,50 EUR |Tag (24 Std.) 16,00 EUR\nSondertarif (P-Card): 1. Std 2,00 EUR |jede weitere Std. 2,00 EUR |Tag (24 Std.) 12,00 EUR",
+        "strasse": "Hermannstraße",
+        "hausnr": "09 - 11",
+        "oeffnungszeit": "Mo.-Sa. 07:00-23:30 Uhr|So. 09:00-23:30 Uhr",
+        "behindertenst": 31,
+        "einfahrtshoehe_in_meter": 2.0,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 670,
+        "gesamt": 700,
+        "auslastung": 4.0,
+        "status": "Störung",
+        "situation": "frei",
+        "stellplaetze_gesamt": 700,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10015,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.0007919727711, 53.552931554513535]
+      },
+      "properties": {
+        "name": "City-Parkhaus",
+        "art": "Parkhaus",
+        "preise": "3,30 EUR/h|Tageshöchstsatz 20,00 EUR",
+        "strasse": "Gertrudenstraße",
+        "hausnr": "2",
+        "einfahrt": "a) Raboisen |b) Rosenstraße",
+        "oeffnungszeit": "Mo.-Fr. 06:00-23:30 Uhr|Sa. 08:00-23:30 Uhr|So. 10:00-23:30 Uhr",
+        "einfahrtshoehe_in_meter": 1.93,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 378,
+        "gesamt": 1110,
+        "auslastung": 66.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 1110,
+        "received": "11.02.2024, 03:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10016,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.996296605176623, 53.54832020044909]
+      },
+      "properties": {
+        "name": "Große Reichenstraße",
+        "art": "Parkhaus",
+        "preise": "2,00 EUR/30min |Tageshöchstsatz 20,00 EUR|Nachttarif 1,50 EUR\n",
+        "strasse": "Große Reichenstraße",
+        "hausnr": "14",
+        "oeffnungszeit": "Mo.-Mi. 07:00-21:00 Uhr|Do.+Fr. 07:00-23:00 Uhr|Sa. 07:00-21:00 Uhr",
+        "frauenst": 3,
+        "behindertenst": 3,
+        "einfahrtshoehe_in_meter": 2.0,
+        "datenherkunft": "BWVI_V",
+        "punkt": "multi",
+        "pur": "nein",
+        "frei": 441,
+        "gesamt": 965,
+        "auslastung": 54.0,
+        "status": "frei",
+        "situation": "frei",
+        "stellplaetze_gesamt": 965,
+        "received": "11.02.2024, 03:15"
+      }
+    }
+  ],
+  "links": [
+    {
+      "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&filter=frei%20%3E%3D%200&f=json",
+      "rel": "self",
+      "type": "application/geo+json",
+      "title": "This document"
+    },
+    {
+      "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?limit=10&filter=frei%20%3E%3D%200&f=html",
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML"
+    },
+    {
+      "href": "https://api.hamburg.de/datasets/v1/parkhaeuser/collections/verkehr_parkhaeuser/items?filter=frei%20%3E%3D%200&offset=10",
+      "rel": "next",
+      "type": "application/geo+json",
+      "title": "Next page"
+    }
+  ]
+}
