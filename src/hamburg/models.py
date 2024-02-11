@@ -30,6 +30,7 @@ class DisabledParking:
         Returns:
         -------
             A DisabledParking object.
+
         """
 
         def strip_spaces(string: str) -> str | None:
@@ -42,6 +43,7 @@ class DisabledParking:
             Returns:
             -------
                 The string without spaces or None if the string is empty.
+
             """
             if string is None:
                 return None
@@ -92,6 +94,7 @@ class ParkAndRide:
         Returns:
         -------
             A ParkAndRide object.
+
         """
         attr = data["properties"]
         geo = data["geometry"]["coordinates"]
@@ -156,6 +159,7 @@ class Garage:
         Returns:
         -------
             A Garage object.
+
         """
         attr = data["properties"]
         geo = data["geometry"]["coordinates"]
@@ -196,6 +200,7 @@ def availability_calc(
     Returns:
     -------
         The availability percentage.
+
     """
     try:
         return round(
@@ -220,6 +225,7 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
     Returns:
     -------
         The datetime object.
+
     """
     try:
         return datetime.strptime(date_string, date_format).astimezone(
