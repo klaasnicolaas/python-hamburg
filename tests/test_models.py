@@ -5,13 +5,17 @@ from datetime import datetime
 
 from aiohttp import ClientSession
 from aresponses import ResponsesMockServer
+from syrupy.assertion import SnapshotAssertion
 
 from hamburg import DisabledParking, Garage, ParkAndRide, UDPHamburg
 
 from . import load_fixtures
 
 
-async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
+async def test_all_parking_spaces(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+) -> None:
     """Test all parking spaces function."""
     aresponses.add(
         "api.hamburg.de",
@@ -26,14 +30,11 @@ async def test_all_parking_spaces(aresponses: ResponsesMockServer) -> None:
     async with ClientSession() as session:
         client = UDPHamburg(session=session)
         spaces: list[DisabledParking] = await client.disabled_parkings()
-        assert spaces is not None
+        assert spaces == snapshot
         for item in spaces:
             assert isinstance(item, DisabledParking)
-            assert item.spot_id is not None
             assert item.street is None or isinstance(item.street, str)
             assert item.limitation is None or isinstance(item.limitation, str)
-            assert item.longitude is not None
-            assert item.latitude is not None
 
 
 async def test_park_and_rides(aresponses: ResponsesMockServer) -> None:

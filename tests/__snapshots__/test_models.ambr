@@ -1,0 +1,15 @@
+# serializer version: 1
+# name: test_all_parking_spaces
+  list([
+    DisabledParking(spot_id='7460', street='Steenwisch 105', limitation=None, number=1, longitude=9.946928367655032, latitude=53.58310925250252),
+    DisabledParking(spot_id='7461', street='Langenfelder Damm 67', limitation=None, number=1, longitude=9.938008848629853, latitude=53.58105081830283),
+    DisabledParking(spot_id='7462', street='Langenfelder Damm 80a', limitation=None, number=1, longitude=9.935971223239319, latitude=53.582530970209184),
+    DisabledParking(spot_id='7463', street='Langenfelder Damm 91', limitation=None, number=1, longitude=9.93573271213673, latitude=53.582446224018476),
+    DisabledParking(spot_id='7464', street='Stresemannstraße 318', limitation=None, number=1, longitude=9.9299854940711, latitude=53.563378917405764),
+    DisabledParking(spot_id='7465', street='Bertrand-Russell-Straße 4', limitation=None, number=1, longitude=9.886326617358094, latitude=53.575552880265796),
+    DisabledParking(spot_id='7466', street='Kiebitzstraße 44a', limitation=None, number=1, longitude=10.045029564340489, latitude=53.56500132834542),
+    DisabledParking(spot_id='7467', street='Steintorplatz 2', limitation=None, number=1, longitude=10.008951895770426, latitude=53.55181415963955),
+    DisabledParking(spot_id='7468', street='Steindamm 70', limitation=None, number=1, longitude=10.01523796793553, latitude=53.554727297628716),
+    DisabledParking(spot_id='7469', street='Münzplatz 1', limitation=None, number=1, longitude=10.012553064840606, latitude=53.54923736617713),
+  ])
+# ---
