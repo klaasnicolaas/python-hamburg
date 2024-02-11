@@ -120,10 +120,9 @@ class ParkAndRide:
             ),
             longitude=geo[0],
             latitude=geo[1],
-            updated_at=datetime.strptime(
-                attr.get("aktualitaet_belegungsdaten"),
-                "%Y-%m-%d %H:%M:%S",
-            ).replace(tzinfo=pytz.timezone("Europe/Berlin")),
+            updated_at=strptime(
+                attr.get("aktualitaet_belegungsdaten"), "%Y-%m-%d %H:%M:%S"
+            ),
         )
 
 
@@ -230,8 +229,8 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
 
     """
     try:
-        return datetime.strptime(date_string, date_format).astimezone(
-            pytz.timezone("Europe/Berlin"),
+        return datetime.strptime(date_string, date_format).replace(
+            tzinfo=pytz.timezone("Europe/Berlin")
         )
     except (ValueError, TypeError):
         return default
