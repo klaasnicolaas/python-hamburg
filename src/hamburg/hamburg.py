@@ -14,6 +14,8 @@ from yarl import URL
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
 from .models import DisabledParking, Garage, ParkAndRide
 
+VERSION = metadata.version(__package__)
+
 
 @dataclass
 class UDPHamburg:
@@ -51,7 +53,6 @@ class UDPHamburg:
             UDPHamburgError: If the data is not valid.
 
         """
-        version = metadata.version(__package__)
         url = URL.build(
             scheme="https",
             host="api.hamburg.de",
@@ -60,7 +61,7 @@ class UDPHamburg:
 
         headers = {
             "Accept": "application/geo+json",
-            "User-Agent": f"PythonUDPHamburg/{version}",
+            "User-Agent": f"PythonUDPHamburg/{VERSION}",
         }
 
         if self.session is None:

@@ -194,7 +194,7 @@ To run just the Python tests:
 poetry run pytest
 ```
 
-To update the syrupy snapshot tests:
+To update the [syrupy](https://github.com/tophat/syrupy) snapshot tests:
 
 ```bash
 poetry run pytest --snapshot-update
