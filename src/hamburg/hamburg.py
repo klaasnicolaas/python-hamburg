@@ -78,7 +78,7 @@ class UDPHamburg:
                     ssl=True,
                 )
                 response.raise_for_status()
-        except asyncio.TimeoutError as exception:
+        except TimeoutError as exception:
             msg = "Timeout occurred while connecting to the Urban Data Platform API."
             raise UDPHamburgConnectionError(
                 msg,
