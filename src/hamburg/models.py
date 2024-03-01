@@ -1,4 +1,5 @@
 """Asynchronous Python client providing Urban Data information of Hamburg."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
