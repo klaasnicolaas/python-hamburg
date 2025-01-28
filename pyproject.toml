@@ -1,14 +1,12 @@
-[tool.poetry]
+[project]
 name = "hamburg"
 version = "0.0.0"
 description = "Asynchronous Python client providing Urban Data information of Hamburg"
-authors = ["Klaas Schoute <hello@student-techlife.com>"]
-maintainers = ["Klaas Schoute <hello@student-techlife.com>"]
+authors = [{ name="Klaas Schoute", email="<hello@student-techlife.com>"}]
+maintainers = [{name="Klaas Schoute", email="<hello@student-techlife.com>"}]
 license = "MIT"
+requires-python = ">=3.11"
 readme = "README.md"
-homepage = "https://github.com/klaasnicolaas/python-hamburg"
-repository = "https://github.com/klaasnicolaas/python-hamburg"
-documentation = "https://github.com/klaasnicolaas/python-hamburg"
 keywords = ["urban", "data", "platform", "hamburg", "parking", "api", "async", "client"]
 classifiers = [
   "Framework :: AsyncIO",
@@ -21,6 +19,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+dynamic = ["dependencies"]
 packages = [
   { include = "hamburg", from = "src" },
 ]
@@ -31,7 +30,10 @@ python = "^3.11"
 pytz = "^2024.1"
 yarl = ">=1.6.0"
 
-[tool.poetry.urls]
+[project.urls]
+homepage = "https://github.com/klaasnicolaas/python-hamburg"
+repository = "https://github.com/klaasnicolaas/python-hamburg"
+documentation = "https://github.com/klaasnicolaas/python-hamburg"
 "Bug Tracker" = "https://github.com/klaasnicolaas/python-hamburg/issues"
 Changelog = "https://github.com/klaasnicolaas/python-hamburg/releases"
 
@@ -130,7 +132,6 @@ lint.ignore = [
 
   # Conflicts with the Ruff formatter
   "COM812",
-  "ISC001",
 ]
 
 [tool.ruff.lint.flake8-pytest-style]
