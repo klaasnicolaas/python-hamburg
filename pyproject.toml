@@ -51,7 +51,7 @@ pytest-asyncio = "1.4.0"
 pytest-cov = "7.1.0"
 ruff = "0.15.22"
 syrupy = "5.5.3"
-types-pytz = "2026.2.0.20260518"
+types-pytz = "2026.3.1.20260727"
 yamllint = "1.38.0"
 
 [tool.coverage.run]
