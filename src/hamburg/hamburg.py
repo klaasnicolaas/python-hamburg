@@ -15,7 +15,7 @@ from yarl import URL
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
 from .models import DisabledParking, Garage, ParkAndRide
 
-VERSION = metadata.version(__package__)
+VERSION = metadata.version("hamburg")
 
 
 @dataclass

@@ -1,6 +1,5 @@
 """Basic tests for the Urban Data Platform API of Hamburg."""
 
-# pylint: disable=protected-access
 import asyncio
 from unittest.mock import patch
 
