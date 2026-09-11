@@ -22,7 +22,7 @@ classifiers = [
 
 dependencies = [
   "aiohttp>=3.0.0",
-  "pytz>=2024.1,<2025.0.0",
+  "pytz>=2026.3,<2026.4",
   "yarl>=1.6.0",
 ]
 
