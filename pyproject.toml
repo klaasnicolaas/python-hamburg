@@ -54,7 +54,7 @@ pytest-cov = "7.1.0"
 ruff = "0.16.10"
 syrupy = "6.1.1"
 ty = "0.0.84"
-types-pytz = "2026.4.0.20260926"
+types-pytz = "2026.5.0.20261006"
 yamllint = "1.38.0"
 zizmor = "1.30.1"
 
