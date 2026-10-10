@@ -5,8 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
-
-import pytz
+from zoneinfo import ZoneInfo
 
 
 @dataclass
@@ -72,17 +71,17 @@ class ParkAndRide:
     address: str
     construction_year: int
     public_transport_line: str
-    disabled_parking_spaces: int
+    disabled_parking_spaces: int | None
     tickets: dict[str, int]
     url: str
 
-    free_space: int
-    capacity: int
+    free_space: int | None
+    capacity: int | None
     availability_pct: float | None
 
     longitude: float
     latitude: float
-    updated_at: datetime
+    updated_at: datetime | None
 
     @classmethod
     def from_dict(cls: type[ParkAndRide], data: dict[str, Any]) -> ParkAndRide:
@@ -106,15 +105,17 @@ class ParkAndRide:
             address=attr.get("adresse"),
             construction_year=attr.get("baujahr"),
             public_transport_line=attr.get("linie"),
-            disabled_parking_spaces=int(attr.get("stellplaetze_behinderte_gesamt")),
+            disabled_parking_spaces=optional_count(
+                attr.get("stellplaetze_behinderte_gesamt")
+            ),
             tickets={
                 "day": attr.get("ticket_1_tag"),
                 "month": attr.get("ticket_30_tage"),
                 "year": attr.get("ticket_1_jahr"),
             },
             url=attr.get("homepage"),
-            free_space=int(attr.get("stellplaetze_frei")),
-            capacity=int(attr.get("stellplaetze_gesamt")),
+            free_space=optional_count(attr.get("stellplaetze_frei")),
+            capacity=optional_count(attr.get("stellplaetze_gesamt")),
             availability_pct=availability_calc(
                 attr.get("stellplaetze_frei"),
                 attr.get("stellplaetze_gesamt"),
@@ -229,9 +230,35 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
         The datetime object.
 
     """
+    if date_string is None:
+        return default
     try:
-        return datetime.strptime(date_string, date_format).replace(
-            tzinfo=pytz.timezone("Europe/Berlin")
+        return datetime.strptime(" ".join(date_string.split()), date_format).replace(
+            tzinfo=ZoneInfo("Europe/Berlin")
         )
     except (ValueError, TypeError):
         return default
+
+
+def optional_count(value: object) -> int | None:
+    """Keep absent source counts unknown and reject negative or fractional counts."""
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        msg = "Invalid parking count"
+        raise TypeError(msg)
+    number = int(str(value))
+    if number < 0:
+        msg = "Negative parking count"
+        raise ValueError(msg)
+    return number
+
+
+@dataclass
+class ParkAndRideCollection:
+    """A complete source selection with its retrieval evidence."""
+
+    records: list[ParkAndRide]
+    total_count: int
+    pages_fetched: int
+    complete: bool

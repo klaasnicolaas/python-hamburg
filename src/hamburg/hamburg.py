@@ -13,7 +13,7 @@ from aiohttp.hdrs import METH_GET
 from yarl import URL
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
-from .models import DisabledParking, Garage, ParkAndRide
+from .models import DisabledParking, Garage, ParkAndRide, ParkAndRideCollection
 
 VERSION = metadata.version("hamburg")
 
@@ -142,6 +142,59 @@ class UDPHamburg:
             params={"limit": limit},
         )
         return [ParkAndRide.from_dict(item) for item in locations["features"]]
+
+    async def park_and_ride_collection(
+        self, *, max_records: int = 10000
+    ) -> ParkAndRideCollection:
+        """Retrieve the full P+R selection; a safety ceiling never truncates it.
+
+        Validate counts and IDs across offset pages. No source-wide transactional
+        revision is available, so this proves pagination completeness, not an
+        atomic observation of every facility at the same instant.
+        """
+        if type(max_records) is not int or max_records < 1:
+            msg = "max_records must be positive"
+            raise ValueError(msg)
+        records: list[ParkAndRide] = []
+        identifiers: set[str] = set()
+        total: int | None = None
+        pages = 0
+        while True:
+            data = await self._request(
+                "p_und_r/collections/p_und_r/items",
+                params={"limit": min(1000, max_records), "offset": len(records)},
+            )
+            count = data.get("numberMatched")
+            features = data.get("features")
+            if (
+                type(count) is not int
+                or not 0 <= count <= max_records
+                or not isinstance(features, list)
+                or type(data.get("numberReturned")) is not int
+                or data["numberReturned"] != len(features)
+                or (total is not None and count != total)
+            ):
+                msg = "Invalid or changed P+R collection count"
+                raise UDPHamburgError(msg)
+            total = count
+            pages += 1
+            for feature in features:
+                identifier = feature.get("id")
+                if (
+                    isinstance(identifier, bool)
+                    or not isinstance(identifier, (str, int))
+                    or not str(identifier).strip()
+                    or str(identifier) in identifiers
+                ):
+                    msg = "Missing or duplicate P+R source ID"
+                    raise UDPHamburgError(msg)
+                identifiers.add(str(identifier))
+                records.append(ParkAndRide.from_dict(feature))
+            if len(records) == total:
+                return ParkAndRideCollection(records, total, pages, complete=True)
+            if not features or len(records) > total:
+                msg = "Incomplete P+R collection"
+                raise UDPHamburgError(msg)
 
     async def garages(
         self,

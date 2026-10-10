@@ -1,0 +1,104 @@
+"""Complete P+R retrieval and source-time regression coverage."""
+
+from datetime import UTC
+from unittest.mock import AsyncMock, patch
+
+import pytest
+
+from hamburg import UDPHamburg
+from hamburg.exceptions import UDPHamburgError
+from hamburg.models import ParkAndRide
+
+
+def feature(identifier: object = 1) -> dict:
+    """Make a small source feature, including absent measurements."""
+    return {
+        "id": identifier,
+        "geometry": {"type": "Point", "coordinates": [10.0, 53.6]},
+        "properties": {
+            "name": "Example",
+            "art": "Parkhaus",
+            "stellplaetze_gesamt": "120",
+            "stellplaetze_frei": None,
+            "stellplaetze_behinderte_gesamt": None,
+            "aktualitaet_belegungsdaten": "2026-10-10  22:00:00",
+        },
+    }
+
+
+def page(*identifiers: object, total: int = 2) -> dict:
+    """Return count-qualified GeoJSON."""
+    return {
+        "numberMatched": total,
+        "numberReturned": len(identifiers),
+        "features": [feature(identifier) for identifier in identifiers],
+    }
+
+
+async def test_collects_all_pages_with_original_ids() -> None:
+    """A short first page must not be treated as a complete selection."""
+    async with UDPHamburg() as client:
+        with patch.object(
+            UDPHamburg, "_request", AsyncMock(side_effect=[page(1), page(2)])
+        ) as request:
+            result = await client.park_and_ride_collection()
+    assert [record.spot_id for record in result.records] == ["1", "2"]
+    assert result.total_count == 2
+    assert result.pages_fetched == 2
+    assert result.complete is True
+    assert request.await_args_list[1].kwargs["params"] == {"limit": 1000, "offset": 1}
+
+
+@pytest.mark.parametrize(
+    "pages",
+    [
+        [page(1), page(1)],
+        [page(1), page(total=2)],
+        [page(1), page(2, total=3)],
+        [page(None, total=1)],
+        [page("", total=1)],
+        [page(True, total=1)],  # noqa: FBT003 - deliberately invalid source ID
+        [{"features": [], "numberReturned": 0}],
+        [{"features": [feature()], "numberMatched": 1, "numberReturned": 0}],
+    ],
+)
+async def test_rejects_invalid_or_incomplete_collections(pages: list[dict]) -> None:
+    """No duplicate, missing, changing or partial result is declared complete."""
+    async with UDPHamburg() as client:
+        with (
+            patch.object(UDPHamburg, "_request", AsyncMock(side_effect=pages)),
+            pytest.raises(UDPHamburgError),
+        ):
+            await client.park_and_ride_collection()
+
+
+async def test_ceiling_rejects_instead_of_truncating() -> None:
+    """A bounded request cannot silently hide additional facilities."""
+    async with UDPHamburg() as client:
+        with (
+            patch.object(UDPHamburg, "_request", AsyncMock(return_value=page(1))),
+            pytest.raises(UDPHamburgError),
+        ):
+            await client.park_and_ride_collection(max_records=1)
+
+
+@pytest.mark.parametrize("ceiling", [0, -1, True])
+async def test_invalid_ceiling(ceiling: int) -> None:
+    """Reject invalid limits before source access."""
+    async with UDPHamburg() as client:
+        with (
+            patch.object(UDPHamburg, "_request", AsyncMock()) as request,
+            pytest.raises(ValueError, match="positive"),
+        ):
+            await client.park_and_ride_collection(max_records=ceiling)
+    request.assert_not_awaited()
+
+
+def test_missing_counts_and_local_measurement_time() -> None:
+    """Absent counts stay absent and Berlin summer time converts correctly."""
+    record = ParkAndRide.from_dict(feature())
+    assert record.free_space is None
+    assert record.disabled_parking_spaces is None
+    assert record.capacity == 120
+    assert record.updated_at is not None
+    assert record.updated_at.astimezone(UTC).isoformat() == "2026-10-10T20:00:00+00:00"
