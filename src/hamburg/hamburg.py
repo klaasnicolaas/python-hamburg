@@ -13,7 +13,7 @@ from aiohttp.hdrs import METH_GET
 from yarl import URL
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
-from .models import DisabledParking, Garage, ParkAndRide, ParkAndRideCollection
+from .models import Collection, DisabledParking, Garage, ParkAndRide
 
 VERSION = metadata.version("hamburg")
 
@@ -145,7 +145,7 @@ class UDPHamburg:
 
     async def park_and_ride_collection(
         self, *, max_records: int = 10000
-    ) -> ParkAndRideCollection:
+    ) -> Collection[ParkAndRide]:
         """Retrieve the full P+R selection; a safety ceiling never truncates it.
 
         Validate counts and IDs across offset pages. No source-wide transactional
@@ -191,7 +191,7 @@ class UDPHamburg:
                 identifiers.add(str(identifier))
                 records.append(ParkAndRide.from_dict(feature))
             if len(records) == total:
-                return ParkAndRideCollection(records, total, pages, complete=True)
+                return Collection(records, total, pages, complete=True)
             if not features or len(records) > total:
                 msg = "Incomplete P+R collection"
                 raise UDPHamburgError(msg)

@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from hamburg import UDPHamburg
+from hamburg import Collection, DisabledParking, UDPHamburg
 from hamburg.exceptions import UDPHamburgError
 from hamburg.models import ParkAndRide
 
@@ -42,6 +42,7 @@ async def test_collects_all_pages_with_original_ids() -> None:
             UDPHamburg, "_request", AsyncMock(side_effect=[page(1), page(2)])
         ) as request:
             result = await client.park_and_ride_collection()
+    assert isinstance(result, Collection)
     assert [record.spot_id for record in result.records] == ["1", "2"]
     assert result.total_count == 2
     assert result.pages_fetched == 2
@@ -121,3 +122,13 @@ def test_rejects_invalid_source_counts(value: object, error: type[Exception]) ->
     data["properties"]["stellplaetze_frei"] = value
     with pytest.raises(error):
         ParkAndRide.from_dict(data)
+
+
+def test_collection_supports_other_source_record_types() -> None:
+    """The collection envelope also carries disabled-parking source records."""
+    record = DisabledParking("original-id", "Example", None, 1, 10.0, 53.6)
+    result: Collection[DisabledParking] = Collection([record], 1, 1, complete=True)
+    assert result.records[0] is record
+    assert result.total_count == 1
+    assert result.pages_fetched == 1
+    assert result.complete is True

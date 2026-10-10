@@ -258,10 +258,10 @@ def optional_count(value: object) -> int | None:
 
 
 @dataclass
-class ParkAndRideCollection:
+class Collection[T]:
     """A complete source selection with its retrieval evidence."""
 
-    records: list[ParkAndRide]
+    records: list[T]
     total_count: int
     pages_fetched: int
     complete: bool

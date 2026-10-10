@@ -26,7 +26,7 @@ A python package with which you can retrieve data from the Urban Data Platform o
 
 ## Complete P+R retrieval
 
-`await client.park_and_ride_collection(max_records=10000)` returns `ParkAndRideCollection(records, total_count, pages_fetched, complete=True)`. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
+`await client.park_and_ride_collection(max_records=10000)` returns `Collection[ParkAndRide]` with `records`, `total_count`, `pages_fetched` and `complete`. The generic `Collection[T]` model is shared by source record types; the method selects the P+R dataset. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
 
 Source counts and measurement dates can be absent. P+R timestamps use Berlin seasonal time; ambiguous/nonexistent local times at DST transitions remain unknown. The package does not infer an observation time from the request time or promise that every site's reading is current.
 
@@ -164,7 +164,7 @@ You need at least:
 
 ### Complete P+R retrieval
 
-`await client.park_and_ride_collection(max_records=10000)` returns `ParkAndRideCollection(records, total_count, pages_fetched, complete=True)`. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
+`await client.park_and_ride_collection(max_records=10000)` returns `Collection[ParkAndRide]` with `records`, `total_count`, `pages_fetched` and `complete`. The generic `Collection[T]` model is shared by source record types; the method selects the P+R dataset. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
 
 Source counts and measurement dates can be absent. P+R timestamps use Berlin seasonal time; ambiguous/nonexistent local times at DST transitions remain unknown. The package does not infer an observation time from the request time or promise that every site's reading is current.
 
