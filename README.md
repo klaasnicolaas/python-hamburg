@@ -24,6 +24,14 @@ Asynchronous Python client for the urban datasets of Hamburg (Germany).
 
 A python package with which you can retrieve data from the Urban Data Platform of Hamburg via [their API][api]. This package was initially created to only retrieve parking data from the API, but the code base is made in such a way that it is easy to extend for other datasets from the same platform.
 
+## Complete source collections
+
+`await client.park_and_ride_collection(max_records=10000)` returns `Collection[ParkAndRide]` with `records`, `total_count`, `pages_fetched` and `complete`. The generic `Collection[T]` model is shared by source record types; the method selects the P+R dataset. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
+
+`await client.disabled_parking_collection(max_records=10000)` returns `Collection[DisabledParking]` for the complete disabled-parking dataset. The disabled-parking method uses the current official `behindertenstellplaetze` collection ID, also used by `disabled_parkings()`. Both methods use the same bounded pagination and count/ID validation; the existing limited list methods remain available.
+
+Source counts and measurement dates can be absent. P+R timestamps use Berlin seasonal time; ambiguous/nonexistent local times at DST transitions remain unknown. The package does not infer an observation time from the request time or promise that every site's reading is current.
+
 ## Installation
 
 ```bash
@@ -156,7 +164,15 @@ You need at least:
 - Python 3.12+
 - [uv][uv-install]
 
-### Installation
+### Complete source collections
+
+`await client.park_and_ride_collection(max_records=10000)` returns `Collection[ParkAndRide]` with `records`, `total_count`, `pages_fetched` and `complete`. The generic `Collection[T]` model is shared by source record types; the method selects the P+R dataset. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
+
+`await client.disabled_parking_collection(max_records=10000)` returns `Collection[DisabledParking]` for the complete disabled-parking dataset. The disabled-parking method uses the current official `behindertenstellplaetze` collection ID, also used by `disabled_parkings()`. Both methods use the same bounded pagination and count/ID validation; the existing limited list methods remain available.
+
+Source counts and measurement dates can be absent. P+R timestamps use Berlin seasonal time; ambiguous/nonexistent local times at DST transitions remain unknown. The package does not infer an observation time from the request time or promise that every site's reading is current.
+
+## Installation
 
 Install all packages, including all development requirements:
 

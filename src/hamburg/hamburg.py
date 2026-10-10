@@ -6,14 +6,17 @@ import asyncio
 import socket
 from dataclasses import dataclass
 from importlib import metadata
-from typing import Any, Self
+from typing import TYPE_CHECKING, Any, Self
 
 from aiohttp import ClientError, ClientSession
 from aiohttp.hdrs import METH_GET
 from yarl import URL
 
 from .exceptions import UDPHamburgConnectionError, UDPHamburgError
-from .models import DisabledParking, Garage, ParkAndRide
+from .models import Collection, DisabledParking, Garage, ParkAndRide
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 VERSION = metadata.version("hamburg")
 
@@ -117,7 +120,7 @@ class UDPHamburg:
 
         """
         locations = await self._request(
-            "behindertenstellplaetze/collections/verkehr_behindertenparkpl/items",
+            "behindertenstellplaetze/collections/behindertenstellplaetze/items",
             params={"limit": limit},
         )
         return [DisabledParking.from_dict(item) for item in locations["features"]]
@@ -142,6 +145,83 @@ class UDPHamburg:
             params={"limit": limit},
         )
         return [ParkAndRide.from_dict(item) for item in locations["features"]]
+
+    async def park_and_ride_collection(
+        self, *, max_records: int = 10000
+    ) -> Collection[ParkAndRide]:
+        """Retrieve the full P+R selection; a safety ceiling never truncates it.
+
+        Validate counts and IDs across offset pages. No source-wide transactional
+        revision is available, so this proves pagination completeness, not an
+        atomic observation of every facility at the same instant.
+        """
+        return await self._collection(
+            "p_und_r/collections/p_und_r/items",
+            ParkAndRide.from_dict,
+            max_records=max_records,
+        )
+
+    async def disabled_parking_collection(
+        self, *, max_records: int = 10000
+    ) -> Collection[DisabledParking]:
+        """Retrieve all disabled-parking records with pagination evidence."""
+        return await self._collection(
+            "behindertenstellplaetze/collections/behindertenstellplaetze/items",
+            DisabledParking.from_dict,
+            max_records=max_records,
+        )
+
+    async def _collection[T](
+        self,
+        uri: str,
+        parse_record: Callable[[dict[str, Any]], T],
+        *,
+        max_records: int,
+    ) -> Collection[T]:
+        """Share bounded pagination and completeness checks across datasets."""
+        if type(max_records) is not int or max_records < 1:
+            msg = "max_records must be positive"
+            raise ValueError(msg)
+        records: list[T] = []
+        identifiers: set[str] = set()
+        total: int | None = None
+        pages = 0
+        while True:
+            data = await self._request(
+                uri,
+                params={"limit": min(1000, max_records), "offset": len(records)},
+            )
+            count = data.get("numberMatched")
+            features = data.get("features")
+            if (
+                type(count) is not int
+                or not 0 <= count <= max_records
+                or not isinstance(features, list)
+                or type(data.get("numberReturned")) is not int
+                or data["numberReturned"] != len(features)
+                or (total is not None and count != total)
+            ):
+                msg = "Invalid or changed source collection count"
+                raise UDPHamburgError(msg)
+            total = count
+            pages += 1
+            for feature in features:
+                identifier = feature.get("id")
+                if (
+                    isinstance(identifier, bool)
+                    or not isinstance(identifier, (str, int))
+                    or not str(identifier).strip()
+                    or str(identifier) in identifiers
+                ):
+                    msg = "Missing or duplicate source ID"
+                    raise UDPHamburgError(msg)
+                identifiers.add(str(identifier))
+                records.append(parse_record(feature))
+            if len(records) == total:
+                return Collection(records, total, pages, complete=True)
+            if not features or len(records) > total:
+                msg = "Incomplete source collection"
+                raise UDPHamburgError(msg)
 
     async def garages(
         self,

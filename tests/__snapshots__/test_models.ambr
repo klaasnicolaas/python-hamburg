@@ -266,7 +266,7 @@
       ''',
       spot_id='10001',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Borgesch 1',
@@ -282,7 +282,7 @@
       price='2,00 EUR/30min | Tageshöchstsatz 20,00 EUR| Nachttarif 1,50 EUR',
       spot_id='10002',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Große Bleichen 35',
@@ -298,7 +298,7 @@
       price='3,90 EUR/h|Tageshöchstsatz 32,00 EUR',
       spot_id='10006',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Marseiller Straße 1',
@@ -317,7 +317,7 @@
       ''',
       spot_id='10007',
       status='besetzt',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Deichtorstraße 2',
@@ -333,7 +333,7 @@
       price='1 Stunde 2,00 EUR|Tageshöchstsatz 20,00 EUR|Nachttarif 22 - 6 Uhr 1,00 EUR',
       spot_id='10010',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Stadthausbrücke 1',
@@ -352,7 +352,7 @@
       ''',
       spot_id='10011',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Platz der Deutschen Einheit 1',
@@ -368,7 +368,7 @@
       price='Parkbereich A Kurzparker (Ebenen OG1 – OG5): 1. Stunde 5,00 EUR|jede weitere Std. 5,00 EUR|Tageshöchstsatz 50,00 EUR & Parkbereich B (UG1 = „Hotel-Bereich“): 1. Stunde 6,00 EUR|jede weitere Std. 6,00 EUR|Tageshöchstsatz 50,00 EUR & Parkbereich C (EG = Umfahrung): 5 Minuten freie |Durchfahrt | je weitere 5 Minuten 1,00 EUR | Tageshöchstsatz 90,00 EUR',
       spot_id='10012',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Hermannstraße 09 - 11',
@@ -387,7 +387,7 @@
       ''',
       spot_id='10013',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Gertrudenstraße 2',
@@ -403,7 +403,7 @@
       price='3,30 EUR/h|Tageshöchstsatz 20,00 EUR',
       spot_id='10015',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
     Garage(
       address='Große Reichenstraße 14',
@@ -422,7 +422,7 @@
       ''',
       spot_id='10016',
       status='frei',
-      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 15, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
     ),
   ])
 # ---
@@ -446,7 +446,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 0, 40, 56, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 0, 40, 56, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -467,7 +467,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 2, 7, 48, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 2, 7, 48, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -488,7 +488,7 @@
         'month': '20',
         'year': '100',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 0, 58, 6, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 0, 58, 6, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url='www.pr.hamburg',
     ),
     ParkAndRide(
@@ -509,7 +509,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 2, 18, 36, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 2, 18, 36, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -530,7 +530,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 3, 5, 59, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 5, 59, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -551,7 +551,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 2, 59, 38, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 2, 59, 38, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -572,7 +572,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 2, 10, 44, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 2, 10, 44, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -593,7 +593,7 @@
         'month': '20',
         'year': '100',
       }),
-      updated_at=datetime.datetime(2024, 1, 17, 12, 11, 22, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 1, 17, 12, 11, 22, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url='www.pr.hamburg',
     ),
     ParkAndRide(
@@ -614,7 +614,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 3, 10, 11, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 3, 10, 11, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
     ParkAndRide(
@@ -635,7 +635,7 @@
         'month': '0',
         'year': '0',
       }),
-      updated_at=datetime.datetime(2024, 2, 11, 1, 16, 26, tzinfo=<DstTzInfo 'Europe/Berlin' LMT+0:53:00 STD>),
+      updated_at=datetime.datetime(2024, 2, 11, 1, 16, 26, tzinfo=zoneinfo.ZoneInfo(key='Europe/Berlin')),
       url=None,
     ),
   ])
