@@ -102,3 +102,13 @@ def test_missing_counts_and_local_measurement_time() -> None:
     assert record.capacity == 120
     assert record.updated_at is not None
     assert record.updated_at.astimezone(UTC).isoformat() == "2026-10-10T20:00:00+00:00"
+
+
+@pytest.mark.parametrize(
+    "source_time", ["2026-10-25 02:30:00", "2026-03-29 02:30:00", None, "invalid"]
+)
+def test_unknown_or_ambiguous_source_time(source_time: str | None) -> None:
+    """DST ambiguity or missing time cannot become a guessed current measurement."""
+    data = feature()
+    data["properties"]["aktualitaet_belegungsdaten"] = source_time
+    assert ParkAndRide.from_dict(data).updated_at is None

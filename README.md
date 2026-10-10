@@ -24,6 +24,12 @@ Asynchronous Python client for the urban datasets of Hamburg (Germany).
 
 A python package with which you can retrieve data from the Urban Data Platform of Hamburg via [their API][api]. This package was initially created to only retrieve parking data from the API, but the code base is made in such a way that it is easy to extend for other datasets from the same platform.
 
+## Complete P+R retrieval
+
+`await client.park_and_ride_collection(max_records=10000)` returns `ParkAndRideCollection(records, total_count, pages_fetched, complete=True)`. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
+
+Source counts and measurement dates can be absent. P+R timestamps use Berlin seasonal time; ambiguous/nonexistent local times at DST transitions remain unknown. The package does not infer an observation time from the request time or promise that every site's reading is current.
+
 ## Installation
 
 ```bash
@@ -156,7 +162,13 @@ You need at least:
 - Python 3.12+
 - [uv][uv-install]
 
-### Installation
+### Complete P+R retrieval
+
+`await client.park_and_ride_collection(max_records=10000)` returns `ParkAndRideCollection(records, total_count, pages_fetched, complete=True)`. Retrieval checks `numberMatched`, `numberReturned` and original IDs across offset pages; changing counts, duplicates, incomplete pages and exceeded safety ceilings raise rather than return a partial collection. No dataset-wide transactional revision is available.
+
+Source counts and measurement dates can be absent. P+R timestamps use Berlin seasonal time; ambiguous/nonexistent local times at DST transitions remain unknown. The package does not infer an observation time from the request time or promise that every site's reading is current.
+
+## Installation
 
 Install all packages, including all development requirements:
 

@@ -233,11 +233,14 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
     if date_string is None:
         return default
     try:
-        return datetime.strptime(" ".join(date_string.split()), date_format).replace(
+        parsed = datetime.strptime(" ".join(date_string.split()), date_format).replace(
             tzinfo=ZoneInfo("Europe/Berlin")
         )
+        if parsed.utcoffset() != parsed.replace(fold=1).utcoffset():
+            return default
     except (ValueError, TypeError):
         return default
+    return parsed
 
 
 def optional_count(value: object) -> int | None:
