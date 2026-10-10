@@ -114,7 +114,7 @@ def test_unknown_or_ambiguous_source_time(source_time: str | None) -> None:
     assert ParkAndRide.from_dict(data).updated_at is None
 
 
-@pytest.mark.parametrize("value,error", [(True, TypeError), (-1, ValueError)])
+@pytest.mark.parametrize(("value", "error"), [(True, TypeError), (-1, ValueError)])
 def test_rejects_invalid_source_counts(value: object, error: type[Exception]) -> None:
     """Boolean and negative source counts cannot become valid occupancy."""
     data = feature()
