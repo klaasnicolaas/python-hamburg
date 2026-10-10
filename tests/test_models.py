@@ -18,7 +18,7 @@ async def test_all_parking_spaces(
     """Test all parking spaces function."""
     aresponses.add(
         "api.hamburg.de",
-        "/datasets/v1/behindertenstellplaetze/collections/verkehr_behindertenparkpl/items",
+        "/datasets/v1/behindertenstellplaetze/collections/behindertenstellplaetze/items",
         "GET",
         aresponses.Response(
             status=200,

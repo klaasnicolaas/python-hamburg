@@ -1,4 +1,4 @@
-"""Complete P+R retrieval and source-time regression coverage."""
+"""Complete source retrieval and source-time regression coverage."""
 
 from datetime import UTC
 from unittest.mock import AsyncMock, patch
@@ -17,6 +17,9 @@ def feature(identifier: object = 1) -> dict:
         "geometry": {"type": "Point", "coordinates": [10.0, 53.6]},
         "properties": {
             "name": "Example",
+            "nahe_adresse": "Example street",
+            "befristung": None,
+            "anzahl": 2,
             "art": "Parkhaus",
             "stellplaetze_gesamt": "120",
             "stellplaetze_frei": None,
@@ -35,13 +38,26 @@ def page(*identifiers: object, total: int = 2) -> dict:
     }
 
 
-async def test_collects_all_pages_with_original_ids() -> None:
+@pytest.mark.parametrize(
+    "method", ["park_and_ride_collection", "disabled_parking_collection"]
+)
+async def test_collects_all_pages_with_original_ids(method: str) -> None:
     """A short first page must not be treated as a complete selection."""
     async with UDPHamburg() as client:
         with patch.object(
             UDPHamburg, "_request", AsyncMock(side_effect=[page(1), page(2)])
         ) as request:
-            result = await client.park_and_ride_collection()
+            result = await getattr(client, method)()
+    expected_type = (
+        ParkAndRide if method == "park_and_ride_collection" else DisabledParking
+    )
+    assert all(isinstance(record, expected_type) for record in result.records)
+    expected_uri = (
+        "p_und_r/collections/p_und_r/items"
+        if method == "park_and_ride_collection"
+        else "behindertenstellplaetze/collections/behindertenstellplaetze/items"
+    )
+    assert request.await_args_list[0].args == (expected_uri,)
     assert isinstance(result, Collection)
     assert [record.spot_id for record in result.records] == ["1", "2"]
     assert result.total_count == 2
@@ -63,35 +79,46 @@ async def test_collects_all_pages_with_original_ids() -> None:
         [{"features": [feature()], "numberMatched": 1, "numberReturned": 0}],
     ],
 )
-async def test_rejects_invalid_or_incomplete_collections(pages: list[dict]) -> None:
+@pytest.mark.parametrize(
+    "method", ["park_and_ride_collection", "disabled_parking_collection"]
+)
+async def test_rejects_invalid_or_incomplete_collections(
+    pages: list[dict], method: str
+) -> None:
     """No duplicate, missing, changing or partial result is declared complete."""
     async with UDPHamburg() as client:
         with (
             patch.object(UDPHamburg, "_request", AsyncMock(side_effect=pages)),
             pytest.raises(UDPHamburgError),
         ):
-            await client.park_and_ride_collection()
+            await getattr(client, method)()
 
 
-async def test_ceiling_rejects_instead_of_truncating() -> None:
+@pytest.mark.parametrize(
+    "method", ["park_and_ride_collection", "disabled_parking_collection"]
+)
+async def test_ceiling_rejects_instead_of_truncating(method: str) -> None:
     """A bounded request cannot silently hide additional facilities."""
     async with UDPHamburg() as client:
         with (
             patch.object(UDPHamburg, "_request", AsyncMock(return_value=page(1))),
             pytest.raises(UDPHamburgError),
         ):
-            await client.park_and_ride_collection(max_records=1)
+            await getattr(client, method)(max_records=1)
 
 
 @pytest.mark.parametrize("ceiling", [0, -1, True])
-async def test_invalid_ceiling(ceiling: int) -> None:
+@pytest.mark.parametrize(
+    "method", ["park_and_ride_collection", "disabled_parking_collection"]
+)
+async def test_invalid_ceiling(ceiling: int, method: str) -> None:
     """Reject invalid limits before source access."""
     async with UDPHamburg() as client:
         with (
             patch.object(UDPHamburg, "_request", AsyncMock()) as request,
             pytest.raises(ValueError, match="positive"),
         ):
-            await client.park_and_ride_collection(max_records=ceiling)
+            await getattr(client, method)(max_records=ceiling)
     request.assert_not_awaited()
 
 
