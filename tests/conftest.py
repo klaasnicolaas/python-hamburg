@@ -9,7 +9,7 @@ from hamburg import UDPHamburg
 
 
 @pytest.fixture(name="hamburg_client")
-async def client() -> AsyncGenerator[UDPHamburg, None]:
+async def client() -> AsyncGenerator[UDPHamburg]:
     """Return a UDP Hamburg client."""
     async with (
         ClientSession() as session,
